@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Document</title>
+    <link rel= "stylesheet" href="home.css"/>
     <style>
         p {
             background-color: lightblue;
         }
+          .box {  
+
+            display: inline-block;  
+            margin: 5px;
+
+        }  
+
+        .RedBox {  
+
+            width: 10px;  
+
+            height: 10px;  
+
+            background-color: red;  
+
+}  
+
+        .GreenBox {  
+
+            width: 10px;  
+
+            height: 10px;  
+
+            background-color: green;  
+
+        }  
+
+ 
         </style>
 </head>
 <body>
@@ -30,6 +59,11 @@
    
 
   print($a. "/". $b . "=". $result);
+
+
+     for (i=0; i<10; i++){
+     print("<div class='box Redbox'></div>");
+  }
      
     ?>
 </body>

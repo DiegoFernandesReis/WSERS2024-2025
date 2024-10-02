@@ -15,7 +15,7 @@
 
     <?php
     //print("Hello world");
-    $a=  "Hello world";
+    $a= "Hello world";
     ?>
 </body>
 </html>

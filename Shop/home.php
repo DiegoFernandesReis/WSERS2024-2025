@@ -14,7 +14,8 @@
     <p>Hello, and welcome to my page</p>
 
     <?php
-    print("Hello world");
+    //print("Hello world");
+    $a=  "Hello world";
     ?>
 </body>
 </html>

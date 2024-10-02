@@ -12,11 +12,19 @@
 </head>
 <body>
     <p>Hello, and welcome to my page</p>
+    
 
     <?php
-    //print("Hello world");
     $a= "Hello world";
     print $a;
     ?>
+
+    <script>
+        i=0
+        while(i<11){
+          alert("Hello world")
+          i= i+1
+        }
+    </script>
 </body>
 </html>

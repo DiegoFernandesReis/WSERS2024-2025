@@ -16,10 +16,21 @@
 
     <?php
     $a= "Hello world <br>";
+    $firstname= "Diego ";
+    $lastname= "Fernandes Reis";
+
+    $name = $firstname . $lastname;
     for($i=0; $i<10;$i++){
-        print($a);
+     
     }
+    $a= 10;
+    $b= 2;
+
+    $result= ($a/$b);
+   
+
+  print($a. "/". $b . "=". $result);
+     
     ?>
-    </script>
 </body>
 </html>

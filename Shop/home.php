@@ -15,16 +15,11 @@
     
 
     <?php
-    $a= "Hello world";
-    print $a;
+    $a= "Hello world <br>";
+    for($i=0; $i<10;$i++){
+        print($a);
+    }
     ?>
-
-    <script>
-        i=0
-        while(i<11){
-          alert("Hello world")
-          i= i+1
-        }
     </script>
 </body>
 </html>

@@ -37,9 +37,8 @@ width: 10px;
 <body>
   
 
-    <?php
-    
-    for ($i = 0; $i <= 10; $i++) {
+    <?php 
+    for ($i = 0; $i <=10; $i++) {
         for ($y = 0; $y < $i; $y++) {
                 print("<div class='box Redbox'></div>");
  
@@ -48,7 +47,6 @@ width: 10px;
         }
         print("<br>");
     }
-    print("Hello world");
     ?>
 </body>
 </html>

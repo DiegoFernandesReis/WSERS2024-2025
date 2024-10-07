@@ -41,8 +41,12 @@
     </style>
 
     <?php
-     for($i=0; $i<10; $i++){
-        print("<div class='box Redbox'></div>");
+     for($i=0; $i<=10; $i++){
+        for($y=0; $y<=$i; $y++ ) {
+            print("<div class='box Redbox'></div>");
+            print("<div class='box Greenbox></div>");
+        }
+        print ("<br>");
      }
     ?>
 </body>

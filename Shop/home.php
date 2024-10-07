@@ -61,7 +61,7 @@
   print($a. "/". $b . "=". $result);
 
 
-     for (i=0; i<10; i++){
+     for($i=0; $i<10; $i++){
      print("<div class='box Redbox'></div>");
   }
      

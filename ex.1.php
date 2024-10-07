@@ -12,32 +12,30 @@
           p {
             background-color: lightblue;
         }
-          .box {  
+         .box {
 
-            display: inline-block;  
+ display: inline-block;
             margin: 5px;
 
-        }  
+ }
 
-        .RedBox {  
+ .RedBox {
+ width: 10px;
 
-            width: 10px;  
+height: 10px;
 
-            height: 10px;  
+ background-color: red;
 
-            background-color: red;  
+}
 
-}  
+.GreenBox {
 
-        .GreenBox {  
+width: 10px;
 
-            width: 10px;  
+ height: 10px;
+ background-color: green;
 
-            height: 10px;  
-
-            background-color: green;  
-
-        }  
+ }
     </style>
 
     <?php

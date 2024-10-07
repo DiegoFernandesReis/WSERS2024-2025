@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-</head>
-<body>
     <style>
           p {
             background-color: lightblue;
         }
          .box {
 
- display: inline-block;
+            display: inline-block;
             margin: 5px;
-
  }
 
  .RedBox {
@@ -36,15 +32,23 @@ width: 10px;
 
  }
     </style>
+    <p>test</p>    
+</head>
+<body>
+  
 
     <?php
-     for($i=0; $i<=10; $i++){
-        for($y=0; $y<=$i; $y++ ) {
-            print("<div class='box Redbox'></div>");
-            print("<div class='box Greenbox></div>");
+    
+    for ($i = 0; $i <= 10; $i++) {
+        for ($y = 0; $y < $i; $y++) {
+                print("<div class='box Redbox'></div>");
+ 
+                print("<div class='box Greenbox'></div>");
+      
         }
-        print ("<br>");
-     }
+        print("<br>");
+    }
+    print("Hello world");
     ?>
 </body>
 </html>

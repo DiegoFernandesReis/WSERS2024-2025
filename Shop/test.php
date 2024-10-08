@@ -61,12 +61,12 @@
 
 
      for($i=0; $i<10; $i++){
-        for ($j=0; $j< $i; $j++){
+        for ($j=0; $j <= $i; $j++){
             if(($i+$j) % 2 == 0){
-                print("<div class='box RedBox'></div>");
+                print("<div class='box RedBox'>".($i + $j)."</div>");
             }
             else {
-                print("<div class='box GreenBox'></div>");
+                print("<div class='box GreenBox'>".($i + $j)."</div>");
             }
            
         }

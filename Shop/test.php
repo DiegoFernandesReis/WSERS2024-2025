@@ -8,32 +8,32 @@
         p {
             background-color: lightblue;
         }
-          .box {  
+         .box { 
 
-            display: inline-block;  
+ display: inline-block; 
             margin: 5px;
 
-        }  
+ } 
 
-        .RedBox {  
+ .RedBox { 
 
-            width: 10px;  
+ width: 10px; 
 
-            height: 10px;  
+ height: 10px;
 
-            background-color: red;  
+ background-color: red;
 
-}  
+}
 
-        .GreenBox {  
+ .GreenBox { 
 
-            width: 10px;  
+ width: 10px;
 
-            height: 10px;  
+ height: 10px;
 
-            background-color: green;  
+ background-color: green;
 
-        }  
+ } 
 
  
         </style>
@@ -61,9 +61,11 @@
 
 
      for($i=0; $i<10; $i++){
-     print("<div class='box Redbox'></div>");
+        for ($j=0; $j< $i; $j++){
+            print("<div class='box RedBox'></div>");
+        }
+        print("<br>");
   }
-     
     ?>
 </body>
 </html>

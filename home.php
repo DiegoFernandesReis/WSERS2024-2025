@@ -40,9 +40,9 @@ width: 10px;
     <?php 
     for ($i = 0; $i <=10; $i++) {
         for ($y = 0; $y < $i; $y++) {
-                print("<div class='box Redbox'></div>");
+                print("<div class='box RedBox'></div>");
  
-                print("<div class='box Greenbox'></div>");
+                print("<div class='box GreenBox'></div>");
       
         }
         print("<br>");

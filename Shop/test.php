@@ -62,7 +62,13 @@
 
      for($i=0; $i<10; $i++){
         for ($j=0; $j< $i; $j++){
-            print("<div class='box RedBox'></div>");
+            if(($i+$j) % 2 == 0){
+                print("<div class='box RedBox'></div>");
+            }
+            else {
+                print("<div class='box GreenBox'></div>");
+            }
+           
         }
         print("<br>");
   }

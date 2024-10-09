@@ -1,0 +1,13 @@
+body{
+    background-color:red;
+}
+.NavCenter{
+    display: flex;
+}
+
+._NavBar{
+    width:80%;
+    background-color: black;
+    height: 40px;
+    text:
+}

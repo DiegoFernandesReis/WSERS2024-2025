@@ -16,6 +16,10 @@ function NavigationBar ($buttontohighlight) {
                                    print ("class='active'");
         
     } ?>> >controller</a>
+    <a href="./Accesories.php"Accesories <?php if ($buttontohighlight == "Accesories"){
+                                   print ("class='active'");
+        
+    } ?>> >controller</a>
     </div>
          </div>
              </div>

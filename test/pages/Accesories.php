@@ -9,7 +9,7 @@
 <body>
 <?php
     include_once("Commoncode.php");
-    NavigationBar("controller");
+    NavigationBar("Accesories");
     ?>
 </body>
 </html>

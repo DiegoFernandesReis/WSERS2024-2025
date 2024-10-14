@@ -4,7 +4,7 @@ function NavigationBar ($buttontohighlight) {
     <div class= "Navcenter">
         <div class= "Navbar">
             <div class = "Mainlinks">
-    <a href="Home.php"Home<?php if ($buttontohighlight == "home"){
+    <a href="./Home.php"Home<?php if ($buttontohighlight == "home"){
                                    print ("class='active'");
         
     } ?>>  >home</a>

@@ -7,11 +7,11 @@
 <body>
     <?php
     $a=array();
-    $array_push($a,10,20,30);
+    array_push($a,10,20,30);
 
     for($i=0; $i <count($a);$i++){
-        print($a($i));
-    }
+        print($a[$i] . "<br>");
+;    }
     ?>
 </body>
 </html>

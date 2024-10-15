@@ -6,9 +6,9 @@
 </head>
 <body>
     <?php
-    $array=[];
-    $array.push($a,10,20,30);
-    $array.pop();
+    $a=[];
+    $array_push($a,10,20,30);
+    $array_pop($a);
     for($i=0; $i<count($a);$i++){
         print($a);
     }

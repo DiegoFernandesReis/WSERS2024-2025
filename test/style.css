@@ -9,22 +9,23 @@
     background-color: red;
     width: 200px;
     border: 1px solid #555;
+    
 }
-li a {
+.Navcenter a {
     display:block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover {
+.Navcenter a:hover {
     background-color: white;
     color: red;
 }
 .active {
-    background-color: yellow;
+    background-color: blue;
 }
-li:last-child {
+.Navcenter:last-child {
     border-bottom: none;
 }
 table{

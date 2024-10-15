@@ -8,15 +8,15 @@ function NavigationBar ($buttontohighlight) {
                                    print ("class='active'");
         
     } ?>>  >home</a>
-    <a href="./Nintendo switch.php"Nintendo switch <?php if ($buttontohighlight == "nintendoswitch"){
+    <a href="Nintendo switch.php"Nintendo switch <?php if ($buttontohighlight == "nintendoswitch"){
                                    print ("class='active'");
         
     } ?>> >nintendoswitch</a>
-    <a href="./Controller.php"Pro Controller <?php if ($buttontohighlight == "controller"){
+    <a href="Controller.php"Pro Controller <?php if ($buttontohighlight == "controller"){
                                    print ("class='active'");
         
     } ?>> >controller</a>
-    <a href="./Accesories.php"Accesories <?php if ($buttontohighlight == "Accesories"){
+    <a href="Accesories.php"Accesories <?php if ($buttontohighlight == "Accesories"){
                                    print ("class='active'");
         
     } ?>> >Accesories</a>

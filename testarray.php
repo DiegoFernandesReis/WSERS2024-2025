@@ -7,20 +7,32 @@
 </head>
 <body>
     <?php
+    $_GET;
+
     $arrOfNames=[];
     $arrOfNames=["Durbaca"]="Dan";
     $arrOfNames=["Claude"]="Laura";
     $arrOfNames=["Ayash"]="Ayman";
     $arrOfNames=["Ahmadi"]="Abolo";
 
+    $nameRoSearch="Gilson";
+    if(isset($arrOfNames[$nameToSearch])){
+        print("The first name of ".$nameToSearch. "is" . $arrOfNames[$nameToSearch]);
+    }
+    else{
+        print("There is no" . $nameToSearch. "in the array of Names");
+    }
+
+/*
     // DISPLAY tihs array :
 
-    foreach($arrOfNames as $value){
+    foreach($arrOfNames as &$value){
         $value=$value."is a student of 2TPIFI"; 
     }
     foreach($arrOfNames as $value){
         print($value. "<br>");
         }
+        */
     ?>
 </body>
 </html>

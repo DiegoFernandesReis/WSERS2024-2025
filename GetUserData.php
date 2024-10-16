@@ -9,14 +9,14 @@
     <h1>Please fill in the following</h1>
 
     <?php
-
-    if(isset($_GET["UserName"])){
-        print ("Welcome".$_GET["UserName"]."to our page");
+    if(isset($_GET["result"])){
+        print ("That is the Result :".$_GET["result"]. "+" . $_GET["result1"]);
     }
     ?>
     <form action="" method="GET">
         <div>Please type your name:</div>
-        <input type="text" placeholder="Enter your name" name="UserName">
+        <input type="number" placeholder="Type a number" name="result">
+        <input type="number" placeholder="Type a second" name="result1">
         <input type="submit" value="send data">    
     </form>
 </body>

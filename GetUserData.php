@@ -9,8 +9,8 @@
     <h1>Please fill in the following</h1>
 
     <?php
-    if(isset($_GET["result"])){
-        print ("That is the Result :".$_GET["result"]. "+" . $_GET["result1"]);
+    if(isset($_GET["result"]) && isset($_GET["result1"])){
+        print ("That is the Result :".($_GET["result"]) +  ($_GET["result1"]));
     }
     ?>
     <form action="" method="GET">

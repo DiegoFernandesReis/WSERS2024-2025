@@ -10,8 +10,7 @@
     array_push($a,10,20,30);
 
     for($i=0; $i <count($a);$i++){
-        print($a[$i] . "<br>");
-;    }
+        print($a[$i] . "<br>"); }
     ?>
 </body>
 </html>

@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Please fill in the following</h1>
+
+    <?php
+
+    if(isset($_GET["UserName"])){
+        print ("Welcome".$_GET["UserName"]."to our page");
+    }
+    ?>
     <form action="" method="GET">
         <div>Please type your name:</div>
         <input type="text" placeholder="Enter your name" name="UserName">

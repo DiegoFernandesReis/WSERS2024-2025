@@ -8,7 +8,7 @@
 </head>
  
 <body>
-    <h1>Enter a number between 0 and 100</h1>
+    <h1>Put a number between 0 and 100</h1>
  
     <?php
     if (isset($_GET["integer"])) {

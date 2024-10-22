@@ -9,12 +9,16 @@
  
 <body>
     <h1>Put a number between 0 and 100</h1>
+    <?php
+
+    ?>
  
     <?php
     if (isset($_GET["integer"])) {
         $number = $_GET["integer"];
         if (($number % 2) == 0) {
             print("Well done, you have picked an even number ");
+            print("<br><a href='homework.php'>Try again</a>");
         } 
         
         else {

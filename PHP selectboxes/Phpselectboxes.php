@@ -17,8 +17,8 @@
     ?>
     <h1>Login form</h1>
     <form method="POST">
-        Please enter your name: <input type="text name="Username" value="<?=$_POST["Username"] ?>">
-        Please enter your password : <input type="password" name="Password>
+        Please enter your name: <input type="text" name="Username" value="<?=$_POST["Username"]?>">
+        Please enter your password : <input type="password" name="Password">
 
         <select name="cars">
             <?php

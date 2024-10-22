@@ -15,7 +15,7 @@
     $arrOfNames=["Ayash"]="Ayman";
     $arrOfNames=["Ahmadi"]="Abolo";
 
-    $nameRoSearch="Gilson";
+    $nameToSearch="Gilson";
     if(isset($arrOfNames[$nameToSearch])){
         print("The first name of ".$nameToSearch. "is" . $arrOfNames[$nameToSearch]);
     }

@@ -12,12 +12,13 @@
     //$carsArrayAssoc = array("a" => "Ford", "b" => "Saab", "c"=> "Opel");
 
     if(isset($_POST["Username"]) && isset($_POST["cars"])){
-        print("Welcome". $_POST["Username"]. "your favourite cars is". $_POST["cars"]);
+        print("Welcome". $_POST["Username"] . "your favourite cars is". $_POST["cars"]);
     }
     ?>
     <h1>Login form</h1>
     <form method="POST">
-        Please enter your name: <input type="text" name="Username" value="<?=$_POST["Username"]?>">
+        Please enter your name: <input type="text" name="Username" value="<?php if(isset($_POST["Username"])){
+            print($_POST["Username"]);}?>">
         Please enter your password : <input type="password" name="Password">
 
         <select name="cars">

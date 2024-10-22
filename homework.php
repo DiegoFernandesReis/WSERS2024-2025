@@ -22,10 +22,8 @@
     ?>
  
             <form action="" method="GET">
-                <input type="number" placeholder="Your number" name="integer"><br /></br>
+                <input type="number" placeholder="Your number" name="integer"><br/></br>
                 <input type="submit" value="Send data">
- 
- 
             <?php
         }
     } 

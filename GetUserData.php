@@ -10,7 +10,7 @@
 
     <?php
     if(isset($_GET["result"]) && isset($_GET["result1"])){
-        print ("That is the Result :".($_GET["result"]) +  ($_GET["result1"]));
+        print ("That is the Result :".($_GET["result"]) + ($_GET["result1"]));
     }
     ?>
     <form action="" method="GET">

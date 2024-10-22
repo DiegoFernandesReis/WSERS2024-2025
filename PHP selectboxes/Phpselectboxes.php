@@ -27,7 +27,11 @@
             <?php
             foreach ($carsArray as $val){
                 ?>
-                 <option value="<?=$val?>"><?=$val?></option>
+                 <option value="<?=$val?>"<?php if(isset($_POST["cars"])){
+                    if($_POST["cars"] == $val){
+                        print("selected='selected'");
+                    }
+                 }?>><?=$val?></option>
                 <?php
             }
             ?>

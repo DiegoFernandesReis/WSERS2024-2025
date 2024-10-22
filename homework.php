@@ -35,7 +35,7 @@
             ?>
  
             <form action="" method="GET">
-                <div>Enter a number</div><br />
+                <div>Enter a number</div><br/>
                 <input type="number" placeholder="Your number" name="integer"><br /></br>
                 <input type="submit" value="Send data">
  

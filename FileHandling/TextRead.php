@@ -31,7 +31,7 @@
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
             //print("<div>" . $line . "</div>");
-            if (count($arrayOfPieces) == 6); {
+            if (count($arrayOfPieces) == 6) {
  
  
         ?>

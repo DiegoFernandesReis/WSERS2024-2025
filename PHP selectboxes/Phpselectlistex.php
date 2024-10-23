@@ -24,8 +24,16 @@
                 <?php
             }
             ?>
-           
-    
+
+            <?php 
+            if(isset($POST["color"])){
+                print("You selected". $POST["color"]);
+            }
+            else {
+                print("You must select something");
+            }
+
+            ?>
 </select>
 <input type="submit" value="send"> 
 </body>

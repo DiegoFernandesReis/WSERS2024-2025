@@ -26,6 +26,7 @@
             ?>
 
 </select>
+<input type="submit" value="send"> 
 </form>
 <?php 
             if(isset($POST["color"])){
@@ -36,6 +37,5 @@
             }
 
             ?>
-<input type="submit" value="send"> 
 </body>
 </html>

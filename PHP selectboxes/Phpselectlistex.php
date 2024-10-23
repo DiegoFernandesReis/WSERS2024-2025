@@ -10,6 +10,8 @@
     $arraycolor=["red","green","blue"];
     ?>
 
+
+<form method="POST">
 <select name="color">
 <?php
             foreach ($arraycolor as $val){
@@ -23,7 +25,9 @@
             }
             ?>
 
-            <?php 
+</select>
+</form>
+<?php 
             if(isset($POST["color"])){
                 print("You selected". $POST["color"]);
             }
@@ -32,7 +36,6 @@
             }
 
             ?>
-</select>
 <input type="submit" value="send"> 
 </body>
 </html>

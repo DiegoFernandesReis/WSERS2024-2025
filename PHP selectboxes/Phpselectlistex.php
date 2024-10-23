@@ -19,8 +19,6 @@
                         print("selected='selected'");
                     }
                  }?>><?=$val?></option>
-
-                 <?="You have Selected: . $val"?>
                 <?php
             }
             ?>

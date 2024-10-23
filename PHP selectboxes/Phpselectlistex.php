@@ -29,8 +29,8 @@
 <input type="submit" value="send"> 
 </form>
 <?php 
-            if(isset($POST["color"])){
-                print("You selected". $POST["color"]);
+            if(isset($_POST["color"])){
+                print("You selected ". $_POST["color"]);
             }
             else {
                 print("You must select something");

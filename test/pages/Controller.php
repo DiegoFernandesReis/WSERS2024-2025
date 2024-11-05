@@ -29,7 +29,7 @@
                 <div class="OneProduct">
                     <div> <?= $arrayOfPieces[1] ?></div>
                     <div> <?= $arrayOfPieces[2] ?></div>
-                    <img src="./<?= $arrayOfPieces[5] ?>" width="100px">
+                    <img src="./<?= $arrayOfPieces[5] ?>" width="200px">
                     <div> <?= $arrayOfPieces[3] ?></div>
                    <div>Inventory: <?= $arrayOfPieces[4] ?></div>
                 </div>

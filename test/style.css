@@ -39,13 +39,13 @@ table{
 .OneProduct>td:nth-of-type(2){
     font-weight:bold;
 }
-table:first-of-type{
+.OneProduct:first-of-type{
     font-weight:bold;
 }
 .OneProduct{
     background-color:violet;
 }
-.OneProduct:hover{
+table:hover{
     background-color: beige;
     color:white;
 }

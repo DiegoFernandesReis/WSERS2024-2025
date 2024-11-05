@@ -11,25 +11,31 @@
     include_once("Commoncode.php");
     NavigationBar("nintendoswitch");
     ?>
-  </body>
- <dl>
-  <dd><a href="./Controller.php">Nintendo switch</a></dd>
-  <dt><img src="../images/Nintendo switch.jpg"></dt>
- </dl>
-
- <table>
-  <caption>Nintendo Switch</caption>
-  <tr>
-    <td>Price</td>
-    <td>299,99€</td>
-  </tr>
-
-  <tr>
-    <td>Condition</td>
-    <td>Brand new</td>
-  </tr>
- </table>
-
- <dl>
-  <dt>The switch is brand new and it has a memory of 32 GB </dt>
- </dl>
+    
+   <div class="AllProducts">
+        <?php
+        $myFile = fopen("NintendoSwitch.csv", "r");
+        $line = fgets($myFile);
+        while (!feof($myFile)) {
+            $line = fgets($myFile);
+            $arrayOfPieces = explode(";", $line);
+            //print("<div>" . $line . "</div>");
+            if (count($arrayOfPieces) == 6) {
+ 
+ 
+        ?>
+ 
+ 
+                
+                    <div> <?= $arrayOfPieces[1] ?></div>
+                    <img src="../images/<?= $arrayOfPieces[5] ?>" width="200px">
+                    <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
+                    <div class="OneProduct"> <?= $arrayOfPieces[3] ?></div>
+                   <div class="OneProduct">Inventory: <?= $arrayOfPieces[4] ?></div>
+                
+        <?php
+            }
+        }
+        ?>
+    </div>
+  

@@ -28,18 +28,18 @@
 .Navcenter:last-child {
     border-bottom: none;
 }
-.OneProduct{
+table{
     border: 1px solid black;
     border-collapse:collapse;
 }
-.OneProduct{
+table{
     border: solid black 1px;
     padding:6px;
 }
 .OneProduct>td:nth-of-type(2){
     font-weight:bold;
 }
-.OneProduct:first-of-type{
+table:first-of-type{
     font-weight:bold;
 }
 .OneProduct{

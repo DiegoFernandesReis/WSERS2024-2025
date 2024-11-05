@@ -31,7 +31,7 @@
                     <div> <?= $arrayOfPieces[2] ?></div>
                     <img src="./<?= $arrayOfPieces[5] ?>" width="100px">
                     <div> <?= $arrayOfPieces[3] ?></div>
-                    <div>Inventory: <?= $arrayOfPieces[4] ?></div>
+                   <div>Inventory: <?= $arrayOfPieces[4] ?></div>
                 </div>
         <?php
             }

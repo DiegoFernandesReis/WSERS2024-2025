@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?<?=time()?>">
     <img src="../images/nintendo_banner.webp" id="image">
     <title>Nintendo switch</title>
     <meta charset="utf-8">

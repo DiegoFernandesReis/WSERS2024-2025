@@ -31,23 +31,15 @@
 .OneProduct{
     border: 1px solid black;
     border-collapse:collapse;
+    
 }
 .OneProduct{
     border: solid black 1px;
     padding:6px;
-}
-.OneProduct>td:nth-of-type(2){
-    font-weight:bold;
-}
-.OneProduct:first-of-type{
-    font-weight:bold;
+    width:160px;
 }
 
-table:hover{
-    background-color: beige;
-    color:white;
-}
-  
+
 
 
 

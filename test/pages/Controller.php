@@ -26,13 +26,13 @@
         ?>
  
  
-                <div class="OneProduct">
+                
                     <div> <?= $arrayOfPieces[1] ?></div>
                     <img src="../images/<?= $arrayOfPieces[5] ?>" width="200px">
-                    <div> <?= $arrayOfPieces[2] ?></div>
-                    <div> <?= $arrayOfPieces[3] ?></div>
-                   <div>Inventory: <?= $arrayOfPieces[4] ?></div>
-                </div>
+                    <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
+                    <div class="OneProduct"> <?= $arrayOfPieces[3] ?></div>
+                   <div class="OneProduct">Inventory: <?= $arrayOfPieces[4] ?></div>
+                
         <?php
             }
         }

@@ -28,24 +28,24 @@
 .Navcenter:last-child {
     border-bottom: none;
 }
-table{
+.OneProduct{
     border: 1px solid black;
     border-collapse:collapse;
 }
-td{
+.OneProduct{
     border: solid black 1px;
     padding:6px;
 }
-tr>td:nth-of-type(2){
+.OneProduct>td:nth-of-type(2){
     font-weight:bold;
 }
-table:first-of-type{
+.OneProduct:first-of-type{
     font-weight:bold;
 }
-dd{
+.OneProduct{
     background-color:violet;
 }
-dd:hover{
+.OneProduct:hover{
     background-color: beige;
     color:white;
 }

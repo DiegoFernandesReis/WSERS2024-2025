@@ -20,7 +20,7 @@
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
             //print("<div>" . $line . "</div>");
-            if (count($arrayOfPieces) == 6) {
+            if (count($arrayOfPieces) == 3) {
  
  
         ?>
@@ -45,22 +45,7 @@
   <dt><img src="../images/controller.jpeg"></dt>
 </dl> 
 
-<table>
-  <caption>Pro controller</caption>
-  <tr>
-    <td>Price</td>
-    <td>59,99€</td>
-  </tr>
 
-  <tr>
-    <td>Condition</td>
-    <td>Brand new</td>
-  </tr>
- </table>
-
- <dl>
-  <dt>The controller is brand new, the battery lasts a long time before it runs out </dt>
- </dl>
 
 
    

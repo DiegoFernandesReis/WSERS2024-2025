@@ -20,7 +20,7 @@
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
             //print("<div>" . $line . "</div>");
-            if (count($arrayOfPieces) == 3) {
+            if (count($arrayOfPieces) == 6) {
  
  
         ?>
@@ -28,8 +28,8 @@
  
                 <div class="OneProduct">
                     <div> <?= $arrayOfPieces[1] ?></div>
+                    <img src="../images/<?= $arrayOfPieces[5] ?>" width="200px">
                     <div> <?= $arrayOfPieces[2] ?></div>
-                    <img src="./<?= $arrayOfPieces[5] ?>" width="200px">
                     <div> <?= $arrayOfPieces[3] ?></div>
                    <div>Inventory: <?= $arrayOfPieces[4] ?></div>
                 </div>
@@ -40,11 +40,6 @@
     </div>
  
   </body>
-<dl>
-  <dd><a href="./Nintendo switch.php">Pro controller</a></dd>
-  <dt><img src="../images/controller.jpeg"></dt>
-</dl> 
-
 
 
 

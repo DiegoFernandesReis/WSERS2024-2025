@@ -28,11 +28,11 @@
 .Navcenter:last-child {
     border-bottom: none;
 }
-table{
+.OneProduct{
     border: 1px solid black;
     border-collapse:collapse;
 }
-table{
+.OneProduct{
     border: solid black 1px;
     padding:6px;
 }
@@ -42,9 +42,7 @@ table{
 .OneProduct:first-of-type{
     font-weight:bold;
 }
-.OneProduct{
-    background-color:violet;
-}
+
 table:hover{
     background-color: beige;
     color:white;

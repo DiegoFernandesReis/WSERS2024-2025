@@ -20,8 +20,8 @@
       <dt><img src="../images/controller.jpeg"></dt>
       <dd><a href="Nintendo switch.php">Nintendo switch</a></dd>
       <dt><img src="../images/Nintendo switch.jpg"></dt>
-      <dd><a href="Accesories.php">Charger</a></dd>
-      <dt><img src="../images/Charger.jpeg" width="400 px"></dt>
+      <dd><a href="Accesories.php">Accessories</a></dd>
+      <dt><img src="../images/accessories.jpeg" width="400 px"></dt>
     </dl>
    <style>
         

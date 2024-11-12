@@ -9,7 +9,21 @@
 </head>
 <body>
     <?php
-
+    function form(){
+        $myfile = fopen("Clients.csv", "r");
+        
+        while (!feof($myfile)) {
+            $line = fgets($myfile);
+            $arrayOfPieces = explode(";", $line);
+            //print("<div>" . $line . "</div>");
+            if (count($arrayOfPieces) == 0) {
+                print($arrayOfPieces[0]);
+            }
+    }
+    }
+    if($_SERVER["REQUEST_METHOD"] == "POST") { // Checks if a POST request was send to the server
+    form();
+    }
     if(isset($_POST["username"], $_POST["psw"] , $_POST["pswAgain"])){
         print("Registration in process...");
         if($_POST["psw"] == $_POST["pswAgain"]) {

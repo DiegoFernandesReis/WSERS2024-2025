@@ -17,14 +17,17 @@
             if(checkUsersPassword($_POST["username"], $_POST["psw"])){
                 print("Your password is correct");
             }
+            else{
+                print("invalid password");
+            }
+        print("Your username is already in our database");
+    }
 
-        else{
-            print("Your username already exists");
-        }
     }
-    }
+    
 
     ?>
+    <h1>Login :</h1>
 
     <form method="POST">
     <input type="text" name="username" placeholder="Type your username" />

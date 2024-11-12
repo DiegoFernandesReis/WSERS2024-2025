@@ -66,5 +66,6 @@ function checkUsersPassword($givenUser, $givenPassword){
         }
         
     }
+    fclose($fileusers);
     return false;
 }

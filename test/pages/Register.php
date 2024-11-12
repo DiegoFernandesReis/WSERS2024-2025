@@ -9,6 +9,8 @@
 </head>
 <body>
     <?php
+     include_once("Commoncode.php");
+     NavigationBar("Register");
    /* function form()
     {
         $username= false;
@@ -43,8 +45,7 @@
             print("Password do not match. Please try again !");
         }
     }
-     include_once("Commoncode.php");
-     NavigationBar("Register");
+    
     ?>
 
     <h1>To Register, please fill in the following form: </h1>

@@ -9,15 +9,18 @@
 </head>
 <body>
     <?php
-    function form(){
+    function form()
+    {
+        $username= false;
         $myfile = fopen("Clients.csv", "r");
-        
+
         while (!feof($myfile)) {
-            $line = fgets($myfile);
-            $arrayOfPieces = explode(";", $line);
-            //print("<div>" . $line . "</div>");
-            if (count($arrayOfPieces) == 0) {
-                print($arrayOfPieces[0]);
+            $linestring = fgets($myfile);
+            $linearray = explode(";", $linestring);
+            if ($linearray [0] == $_POST ["username"]){
+                $username= true;
+                print("'" . $linearray . "'exists already");
+                break;
             }
     }
     }

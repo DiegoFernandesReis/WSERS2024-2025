@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-    function form()
+   /* function form()
     {
         $username= false;
         $myfile = fopen("Clients.csv", "r");
@@ -26,12 +26,31 @@
     }
     if($_SERVER["REQUEST_METHOD"] == "POST") { // Checks if a POST request was send to the server
     form();
+    }*/
+
+    function userAlreadyExists($checkUser) {
+        $myfile = fopen("Clients.csv", "r");
+        while (!feof($myfile)) {
+            $linestring = fgets($myfile);
+            $linearray = explode(";", $linestring);
+            if ($linearray [0] == $checkUser){
+              return true;
+            }
+            
+        }
+        return false;
     }
     if(isset($_POST["username"], $_POST["psw"] , $_POST["pswAgain"])){
         print("Registration in process...");
         if($_POST["psw"] == $_POST["pswAgain"]) {
             $fileUsers= fopen("Clients.csv","a");
-            fputs($fileUsers, "\n" . $_POST["username"] . ";" . $_POST["psw"] );
+            if(userAlreadyExists($_POST["username"])){
+                print("User already exists, pick another one");
+            }
+            else{
+                fputs($fileUsers, "\n" . $_POST["username"] . ";" . $_POST["psw"] );
+                print("Registration succesfully");
+            }
         } else {
             print("Password do not match. Please try again !");
         }

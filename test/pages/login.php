@@ -12,19 +12,19 @@
 
 
 
-    if (isset($_POST["username"], $_POST["psw"])){
+     if(isset($_POST["username"],$_POST["psw"])){
         if(userAlreadyExists($_POST["username"])){
             if(checkUsersPassword($_POST["username"], $_POST["psw"])){
-                print("Your password is correct");
+                print("Ok, your password is correct");
             }
             else{
-                print("invalid password");
+                print("Invalid password");
             }
-        print("Your username is already in our database");
+        }
+        else{
+            print("Your username is not in our database");
+        }
     }
-
-    }
-    
 
     ?>
     <h1>Login :</h1>

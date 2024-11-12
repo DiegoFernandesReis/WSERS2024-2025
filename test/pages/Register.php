@@ -27,19 +27,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST") { // Checks if a POST request was send to the server
     form();
     }*/
-
-    function userAlreadyExists($checkUser) {
-        $myfile = fopen("Clients.csv", "r");
-        while (!feof($myfile)) {
-            $linestring = fgets($myfile);
-            $linearray = explode(";", $linestring);
-            if ($linearray [0] == $checkUser){
-              return true;
-            }
-            
-        }
-        return false;
-    }
+    
     if(isset($_POST["username"], $_POST["psw"] , $_POST["pswAgain"])){
         print("Registration in process...");
         if($_POST["psw"] == $_POST["pswAgain"]) {

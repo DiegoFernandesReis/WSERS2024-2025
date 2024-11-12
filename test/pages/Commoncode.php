@@ -24,6 +24,10 @@ function NavigationBar ($buttontohighlight) {
                                    print ("class='active'");
         
     } ?>>Register</a>
+    <a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
+                                   print ("class='active'");
+        
+    } ?>>login</a>
 
 
     </div>
@@ -32,3 +36,35 @@ function NavigationBar ($buttontohighlight) {
         <?php
 }
 ?>
+    <?php
+
+     function userAlreadyExists($checkUser) {
+        $myfile = fopen("Clients.csv", "r");
+        while (!feof($myfile)) {
+            $linestring = fgets($myfile);
+            $linearray = explode(";", $linestring);
+            if ($linearray [0] == $checkUser){
+              return true;
+            }
+            
+        }
+        return false;
+    }
+function checkUsersPassword($givenUser, $givenPassword){
+    $myfile = fopen("Clients.csv", "r");
+    while (!feof($myfile)) {
+        $linestring = fgets($myfile);
+        $linearray = explode(";", $linestring);
+        if ($linearray [0] == $givenUser){
+            if($linearray[1] == $givenPassword){
+                return true;
+            }
+            else{
+                return false;
+            }
+          
+        }
+        
+    }
+    return false;
+}

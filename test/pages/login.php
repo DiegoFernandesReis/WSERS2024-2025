@@ -14,7 +14,6 @@
 
      if(isset($_POST["username"],$_POST["psw"])){
         if(userAlreadyExists($_POST["username"])){
-            $goodPassword= str_replace(";","#", $POST["psw"]);
             if(checkUsersPassword($_POST["username"], str_replace(";","#",$_POST["psw"]))){
                 print("Ok, your password is correct");
             }

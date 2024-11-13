@@ -38,7 +38,7 @@
                 print("User already exists, pick another one");
             }
             else{
-                fputs($fileUsers, "\n" . $_POST["username"] . ";" . $_POST["psw"] );
+                fputs($fileUsers, "\n" . $_POST["username"] . ";" . $_POST["psw"] . ";" );
                 print("Registration succesfully");
             }
         } else {

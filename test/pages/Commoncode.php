@@ -39,11 +39,11 @@ function NavigationBar ($buttontohighlight) {
     <?php
 
      function userAlreadyExists($checkUser) {
-        $myfile = fopen("Clients.csv", "r");
-        while (!feof($myfile)) {
-            $linestring = fgets($myfile);
-            $linearray = explode(";", $linestring);
-            if ($linearray [0] == $checkUser){
+        $fileUsers = fopen("Clients.csv", "r");
+        while (!feof($fileUsers)) {
+            $existingUser= fgets($fileUsers);
+            $existingArrayForUser = explode(";", $existingUser);
+            if ($existingArrayForUser [0] == $checkUser){
               return true;
             }
             
@@ -51,12 +51,14 @@ function NavigationBar ($buttontohighlight) {
         return false;
     }
 function checkUsersPassword($givenUser, $givenPassword){
-    $myfile = fopen("Clients.csv", "r");
-    while (!feof($myfile)) {
-        $linestring = fgets($myfile);
-        $linearray = explode(";", $linestring);
-        if ($linearray [0] == $givenUser){
-            if($linearray[1] == $givenPassword){
+    $fileUsers = fopen("Clients.csv", "r");
+    while (!feof($fileUsers)) {
+        $existingUser = fgets($fileUsers);
+        $existingArrayForUser = explode(";", $existingUser);
+        var_dump($existingArrayForUser); // debuggin instruction !!!
+        print("<br>");
+        if ($existingArrayForUser [0] == $givenUser){
+            if($existingArrayForUser[1] == $givenPassword){
                 return true;
             }
             else{
@@ -66,6 +68,5 @@ function checkUsersPassword($givenUser, $givenPassword){
         }
         
     }
-    fclose($fileusers);
     return false;
 }

@@ -27,7 +27,7 @@
     }
 
     ?>
-    <br><a href="../pages/login.php">English</a>
+   
     <h1>Login :</h1>
 
     <form method="POST">

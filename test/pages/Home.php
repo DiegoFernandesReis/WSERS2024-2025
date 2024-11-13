@@ -11,7 +11,7 @@
     include_once("Commoncode.php");
     NavigationBar("home");
     ?>
-        <br><a href="../pages_fr/Home.php">francais</a>
+      
     <h1>Nintendo switch online shop</h1>
 
 

@@ -50,7 +50,7 @@
     }
     
     ?>
-    <br><a href="../pages/Register.php">English</a>
+
 
     <h1>Pour vous enregistrer remplissez le format : </h1>
 

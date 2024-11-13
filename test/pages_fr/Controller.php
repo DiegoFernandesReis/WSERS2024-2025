@@ -11,7 +11,7 @@
     include_once("Commoncode.php");
     NavigationBar("controller");
     ?>
-    <br><a href="../pages/Controller.php" class="NavCenter">English</a>
+  
 
    <div class="AllProducts">
         <?php

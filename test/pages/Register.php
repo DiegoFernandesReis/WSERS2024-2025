@@ -50,7 +50,7 @@
     }
     
     ?>
-    <br><a href="../pages_fr/Register.php">francais</a>
+   
     <h1>To Register, please fill in the following form: </h1>
 
     <form method="POST">

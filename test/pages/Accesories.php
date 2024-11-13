@@ -11,7 +11,7 @@
     include_once("Commoncode.php");
     NavigationBar("Accesories");
     ?>
-    <br><a href="../pages_fr/Accesories.php">francais</a>
+
     <div class="AllProducts">
         <?php
         $myFile = fopen("Accessories.csv", "r");

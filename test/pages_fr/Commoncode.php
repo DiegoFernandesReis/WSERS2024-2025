@@ -4,30 +4,31 @@ function NavigationBar ($buttontohighlight) {
     <div class= "Navcenter">
         <div class= "Navbar">
             <div class = "Mainlinks">
-    <a href="Home.php"Home<?php if ($buttontohighlight == "home"){
+    <li><a href="Home.php"Home<?php if ($buttontohighlight == "home"){
                                    print ("class='active'");
         
-    } ?>>Accueil</a>
-    <a href="Nintendo switch.php"Nintendo switch <?php if ($buttontohighlight == "nintendoswitch"){
+    } ?>>Accueil</a></li>
+    <li><a href="Nintendo switch.php"Nintendo switch <?php if ($buttontohighlight == "nintendoswitch"){
                                    print ("class='active'");
         
-    } ?>>Nintendoswitch</a>
-    <a href="Controller.php"Pro Controller <?php if ($buttontohighlight == "controller"){
+    } ?>>Nintendoswitch</a></li>
+    <li><a href="Controller.php"Pro Controller <?php if ($buttontohighlight == "controller"){
                                    print ("class='active'");
         
-    } ?>>Manette</a>
-    <a href="Accesories.php"Accesories <?php if ($buttontohighlight == "Accesories"){
+    } ?>>Manette</a></li>
+    <li><a href="Accesories.php"Accesories <?php if ($buttontohighlight == "Accesories"){
                                    print ("class='active'");
         
-    } ?>>Accessories</a>
-     <a href="Register.php"Accesories <?php if ($buttontohighlight == "Register"){
+    } ?>>Accessories</a></li>
+     <li><a href="Register.php"Accesories <?php if ($buttontohighlight == "Register"){
                                    print ("class='active'");
         
-    } ?>>Inscription</a>
-    <a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
+    } ?>>Inscription</a></li>
+    <li><a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
                                    print ("class='active'");
         
-    } ?>>Connection</a>
+    } ?>>Connection</a></li>
+     <li><a href="../pages/Home.php">English</a></li>
 
 
     </div>

@@ -11,7 +11,7 @@
     include_once("Commoncode.php");
     NavigationBar("controller");
     ?>
-      <br><a href="../pages_fr/Controller.php">francais</a>
+
    <div class="AllProducts">
         <?php
         $myFile = fopen("Controller.csv", "r");

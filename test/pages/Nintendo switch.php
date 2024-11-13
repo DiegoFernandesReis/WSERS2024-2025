@@ -11,7 +11,7 @@
     include_once("Commoncode.php");
     NavigationBar("nintendoswitch");
     ?>
-    <br><a href="../pages_fr/Nintendo switch.php">francais</a>
+    
    <div class="AllProducts">
         <?php
         $myFile = fopen("NintendoSwitch.csv", "r");

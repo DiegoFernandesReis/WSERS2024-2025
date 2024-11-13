@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="../style.css?<?=time(); ?>">
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../style.css?<?=time()?>">
     <img src="../images/nintendo_banner.webp" id="image">
-    <title>pro controller</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <?php
+    <meta charset="UTF-8">
+    <title>Accessoire</title>
+</head>
+<body>
+<?php
     include_once("Commoncode.php");
-    NavigationBar("controller");
+    NavigationBar("Accesories");
     ?>
-      <br><a href="../pages_fr/Controller.php">francais</a>
-   <div class="AllProducts">
+    <br><a href="../pages/Accesories.php" class="Navcenter">English</a>
+    <div class="AllProducts">
         <?php
-        $myFile = fopen("Controller.csv", "r");
+        $myFile = fopen("Accessories.csv", "r");
         $line = fgets($myFile);
         while (!feof($myFile)) {
             $line = fgets($myFile);
@@ -31,16 +31,12 @@
                     <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
                     <div class="OneProduct"> <?= $arrayOfPieces[3] ?></div>
-                   <div class="OneProduct">Inventory: <?= $arrayOfPieces[4] ?></div>
+                   <div class="OneProduct">Inventaire: <?= $arrayOfPieces[4] ?></div>
                 
         <?php
             }
         }
         ?>
     </div>
- 
-  </body>
-
-
-
-   
+</body>
+</html>

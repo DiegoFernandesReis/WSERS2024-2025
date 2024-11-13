@@ -15,24 +15,24 @@
      if(isset($_POST["username"],$_POST["psw"])){
         if(userAlreadyExists($_POST["username"])){
             if(checkUsersPassword($_POST["username"], str_replace(";","#",$_POST["psw"]))){
-                print("Ok, your password is correct");
+                print("Ok, le password est correct");
             }
             else{
-                print("Invalid password");
+                print("password incorrect");
             }
         }
         else{
-            print("Your username is not in our database");
+            print("Le nom d'utilisateur n'est pas dans la base de donné");
         }
     }
 
     ?>
-    <br><a href="../pages_fr/Login.php">francais</a>
+    <br><a href="../pages/login.php">English</a>
     <h1>Login :</h1>
 
     <form method="POST">
-    <input type="text" name="username" placeholder="Type your username" />
-    <input type="password" name="psw" placeholder=" Enter a password" />
+    <input type="text" name="username" placeholder="Entrer nom d'utilisateur" />
+    <input type="password" name="psw" placeholder=" Enter le password" />
     <input type="submit" value="login">
     </form>
 

@@ -11,7 +11,8 @@
     include_once("Commoncode.php");
     NavigationBar("controller");
     ?>
-      <br><a href="../pages_fr/Controller.php">francais</a>
+    <br><a href="../pages/Controller.php" class="NavCenter">English</a>
+
    <div class="AllProducts">
         <?php
         $myFile = fopen("Controller.csv", "r");
@@ -31,7 +32,7 @@
                     <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
                     <div class="OneProduct"> <?= $arrayOfPieces[3] ?></div>
-                   <div class="OneProduct">Inventory: <?= $arrayOfPieces[4] ?></div>
+                   <div class="OneProduct">Inventaire: <?= $arrayOfPieces[4] ?></div>
                 
         <?php
             }

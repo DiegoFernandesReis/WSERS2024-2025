@@ -35,29 +35,30 @@
         if($_POST["psw"] == $_POST["pswAgain"]) {
             $fileUsers= fopen("Clients.csv","a");
             if(userAlreadyExists($_POST["username"])){
-                print("User already exists, pick another one");
+                print("le nom d'utilisateur existe deja, choissisez un autre");
             }
             else{
             
             $goodPassword= str_replace(";","#", $POST["psw"]);
            // print($goodPassword);
                 fputs($fileUsers, "\n" . $_POST["username"] . ";" . $goodPassword . ";" );
-                print("Registration succesfully");
+                print("Enregistrement complete");
             }
         } else {
-            print("Password do not match. Please try again !");
+            print("password incorrect, ressayez a nouveau !");
         }
     }
     
     ?>
-    <br><a href="../pages_fr/Register.php">francais</a>
-    <h1>To Register, please fill in the following form: </h1>
+    <br><a href="../pages/Register.php">English</a>
+
+    <h1>Pour vous enregistrer remplissez le format : </h1>
 
     <form method="POST">
-    <input type="text" name="username" placeholder="Enter your username" />
-    <input type="password" name="psw" placeholder="Please choose a password" />
-    <input type="password" name="pswAgain" placeholder="Please type the password" />
-    <input type="submit" value="Create account">
+    <input type="text" name="username" placeholder="Choissez un nom d'utilisateur" />
+    <input type="password" name="psw" placeholder="choissisez password" />
+    <input type="password" name="pswAgain" placeholder="retaper le password a nouveau" />
+    <input type="submit" value="Crée le compte">
 </form>
 </body>
 </html>

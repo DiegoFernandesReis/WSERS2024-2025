@@ -14,7 +14,8 @@
 
      if(isset($_POST["username"],$_POST["psw"])){
         if(userAlreadyExists($_POST["username"])){
-            if(checkUsersPassword($_POST["username"], $_POST["psw"])){
+            $goodPassword= str_replace(";","#", $POST["psw"]);
+            if(checkUsersPassword($_POST["username"], str_replace(";","#",$_POST["psw"]))){
                 print("Ok, your password is correct");
             }
             else{
@@ -34,5 +35,11 @@
     <input type="password" name="psw" placeholder=" Enter a password" />
     <input type="submit" value="login">
     </form>
+
+    <?php
+    // test replace:
+
+    
+    ?>
 </body>
 </html>

@@ -55,8 +55,8 @@ function checkUsersPassword($givenUser, $givenPassword){
     while (!feof($fileUsers)) {
         $existingUser = fgets($fileUsers);
         $existingArrayForUser = explode(";", $existingUser);
-        var_dump($existingArrayForUser); // debuggin instruction !!!
-        print("<br>");
+        //var_dump($existingArrayForUser); // debuggin instruction !!!
+        //print("<br>");
         if ($existingArrayForUser [0] == $givenUser){
             if($existingArrayForUser[1] == $givenPassword){
                 return true;

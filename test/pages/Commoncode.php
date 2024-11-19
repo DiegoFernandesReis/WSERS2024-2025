@@ -1,4 +1,16 @@
 <?php
+
+session_start(); //start the session !
+// we just created and have at our dispusal a new ARRAY:
+// $_SESSION
+// we need to store a BOOLEAN value that tells us if the user is LOGGED IN OR NOT !
+if(!isset($_SESSION["UserLoggedIn"])){
+    $_SESSION["UserLoggedIn"] = false;
+    // mark as USER NOT LOGGED IN BY DEFAULT!!
+}
+
+
+
 function NavigationBar ($buttontohighlight) {
     ?>
     <div class= "Navcenter">
@@ -27,14 +39,25 @@ function NavigationBar ($buttontohighlight) {
     <li><a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
                                    print ("class='active'");
         
-    } ?>>login</a></li>
+    } ?>><?php if ($_SESSION["UserLoggedIn"]) { print("Login"); 
+    } 
+    else { print("Log-out");}?></a></li>
 
      <li><a href="../pages_fr/Home.php">francais</a></li>
 
-
+     <div class="Icons">
+        <div><?php if($_SESSION["UserLoggedIn"]){
+            print("Welcome" . $_SESSION["user"]);
+        }
+        else{
+            print("unknown user");
+        }
+        ?>
+        </div>
     </div>
-         </div>
-             </div>
+    </div>
+    </div>
+    </div>
         <?php
 }
 ?>

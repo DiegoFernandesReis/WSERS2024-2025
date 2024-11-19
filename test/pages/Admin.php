@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php 
+    include_once("CommnonCode.php");
+    NavigationBar("Admin")
+    ?>
+
+    <h1>Add Items:</h1>
+    <br>Add Items:<input type="text">
+    <button type="button">Add</button>
+
 </body>
 </html>

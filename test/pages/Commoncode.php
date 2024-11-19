@@ -43,6 +43,13 @@ function NavigationBar ($buttontohighlight) {
     } 
     else { print("Log-out");}?></a></li>
 
+<li><a href="Admin.php"Accesories <?php if ($buttontohighlight == "Admin"){
+                                   print ("class='active'");
+        
+    } ?>><?php if ($_SESSION["Admin"]) { print("Add Product"); 
+    } 
+    else { print("Buy");}?></a></li>
+    
      <li><a href="../pages_fr/Home.php">francais</a></li>
 
      <div class="Icons">

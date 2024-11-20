@@ -12,8 +12,9 @@
     ?>
 
     <h1>Add Items:</h1>
-    <br>Add Items:<input type="text">
-    <button type="button">Add</button>
+    <form method="POST">
+    <input type="text" name="item" placeholder="Enter a Item" />
+    </form>
 
 </body>
 </html>

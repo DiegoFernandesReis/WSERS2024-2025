@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php 
-    include_once("CommnonCode.php");
-    NavigationBar("Admin")
+    include_once("Commoncode.php");
+    NavigationBar("Admin");
     ?>
 
     <h1>Add Items:</h1>

@@ -54,7 +54,7 @@ function NavigationBar ($buttontohighlight) {
             print("Buy");
         }
     } 
-    ?></a></li>
+    ?>Admin</a></li>
     
      <li><a href="../pages_fr/Home.php">francais</a></li>
 

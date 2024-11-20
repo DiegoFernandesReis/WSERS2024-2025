@@ -39,7 +39,7 @@
             }
             else{
             
-            $goodPassword= str_replace(";","#", $POST["psw"]);
+            $goodPassword= str_replace(";","#", $_POST["psw"]);
            // print($goodPassword);
                 fputs($fileUsers, "\n" . $_POST["username"] . ";" . $goodPassword . ";" );
                 print("Registration succesfully");

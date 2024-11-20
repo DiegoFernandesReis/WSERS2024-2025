@@ -9,11 +9,14 @@
     <?php 
     include_once("Commoncode.php");
     NavigationBar("Admin");
+
+
     ?>
 
     <h1>Add Items:</h1>
     <form method="POST">
     <input type="text" name="item" placeholder="Enter a Item" />
+    <input type="button" value="add"/>
     </form>
 
 </body>

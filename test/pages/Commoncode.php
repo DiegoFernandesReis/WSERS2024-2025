@@ -39,9 +39,9 @@ function NavigationBar ($buttontohighlight) {
     <li><a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
                                    print ("class='active'");
         
-    } ?>><?php if ($_SESSION["UserLoggedIn"]) { print("Login"); 
+    } ?>><?php if ($_SESSION["UserLoggedIn"]) { print("login"); 
     } 
-    else { print("Log-out");}?></a></li>
+    else { print("log-out");}?></a></li>
 
 <li><a href="Admin.php"Accesories <?php if ($buttontohighlight == "Admin"){
                                    print ("class='active'");
@@ -69,6 +69,7 @@ function NavigationBar ($buttontohighlight) {
     <?php
 
      function userAlreadyExists($checkUser) {
+        $SESSION["Administrator"] = false;
         $fileUsers = fopen("Clients.csv", "r");
         while (!feof($fileUsers)) {
             $existingUser= fgets($fileUsers);
@@ -77,7 +78,6 @@ function NavigationBar ($buttontohighlight) {
                 $SESSION["Administrator"] = true;
             }
             if ($existingArrayForUser [0] == $checkUser){
-                $SESSION["Administrator"] = false;
               return true;
             }
             

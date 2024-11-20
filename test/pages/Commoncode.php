@@ -46,15 +46,7 @@ function NavigationBar ($buttontohighlight) {
 <li><a href="Admin.php"Accesories <?php if ($buttontohighlight == "Admin"){
                                    print ("class='active'");
         
-    } ?>><?php if (isset($_SESSION["Admin"])) {
-        if($SESSION["Admin"]== true){
-            print("Add Product"); 
-        }
-        else{
-            print("Buy");
-        }
-    } 
-    ?>Admin</a></li>
+    } ?>>Admin</a></li>
     
      <li><a href="../pages_fr/Home.php">francais</a></li>
 
@@ -81,20 +73,24 @@ function NavigationBar ($buttontohighlight) {
         while (!feof($fileUsers)) {
             $existingUser= fgets($fileUsers);
             $existingArrayForUser = explode(";", $existingUser);
+            if($existingArrayForUser [0] == "Administrator"){
+                $SESSION["Administrator"] = true;
+            }
             if ($existingArrayForUser [0] == $checkUser){
+                $SESSION["Administrator"] = false;
               return true;
             }
             
+            
         }
         return false;
+
     }
 function checkUsersPassword($givenUser, $givenPassword){
     $fileUsers = fopen("Clients.csv", "r");
     while (!feof($fileUsers)) {
         $existingUser = fgets($fileUsers);
         $existingArrayForUser = explode(";", $existingUser);
-        //var_dump($existingArrayForUser); // debuggin instruction !!!
-        //print("<br>");
         if ($existingArrayForUser [0] == $givenUser){
             if($existingArrayForUser[1] == $givenPassword){
                 return true;

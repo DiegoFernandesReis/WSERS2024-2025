@@ -35,7 +35,7 @@
         }
     }
 
-    if (isset($_SESSION["UserLoggedIn"])){
+    if ($_SESSION["UserLoggedIn"]){
         ?>
         <h1>Logout</h1>
         <form method="POST">

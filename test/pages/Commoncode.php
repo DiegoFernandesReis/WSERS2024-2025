@@ -108,13 +108,4 @@ function checkUsersPassword($givenUser, $givenPassword){
     }
     return false;
 }
-function additems($items){
-    $fileUsers=fopen("Accessories.csv","r");
-    while(!feof($fileUsers)){
-        $existingitem=fgets($fileUsers);
-        $existingArrayForItems= explode(";", $existingItems);
-        if($existingArrayForItems [0] == $items){
-            return true;
-        }
-    }
-}
+

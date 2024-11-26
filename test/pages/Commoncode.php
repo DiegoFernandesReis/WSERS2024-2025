@@ -32,10 +32,16 @@ function NavigationBar ($buttontohighlight) {
                                    print ("class='active'");
         
     } ?>>Accesories</a></li>
-     <li><a href="Register.php"Accesories <?php if ($buttontohighlight == "Register"){
+    <?php if(!$_SESSION["UserLoggedIn"]){
+        ?>
+        <li><a href="Register.php"Accesories <?php if ($buttontohighlight == "Register"){
                                    print ("class='active'");
         
     } ?>>Register</a></li>
+    <?php
+    }
+    ?>
+     
     <li><a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
                                    print ("class='active'");
         
@@ -46,7 +52,7 @@ function NavigationBar ($buttontohighlight) {
 <?php //var_dump($_SESSION);
             if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 1) {
                 echo "<li><a href='Admin.php'";
-                if ($buttonToHighlight == "admin") print("class='active'");
+                if ($buttontohighlight == "admin") print("class='active'");
                 echo ">Admin</a></li>";
             } ?>
     

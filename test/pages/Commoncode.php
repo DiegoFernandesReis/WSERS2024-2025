@@ -9,35 +9,59 @@ if(!isset($_SESSION["UserLoggedIn"])){
     // mark as USER NOT LOGGED IN BY DEFAULT!!
 }
 
+if(!isset($_SESSION["language"])){
+    $_SESSION["language"] = "EN"; // english language by default
+}
+if(isset($_GET["language"])){
+    $_SESSION["language"] = $_GET["language"];
+}
+
+$arrayofstrings=[];
+$fileTranslation=fopen("translation.csv","r");
+$line=fgets($fileTranslation);
+while(!feof($fileTranslation)){
+    $line=fgets($fileTranslation);
+    $arrayofpieces = explode(";",$line);
+    if(count($arrayofpieces)==3) {
+        if($_SESSION["language"]== "EN"){
+            $arrayofstrings[$arrayofpieces[0]] = $arrayofpieces[0];
+        }
+        else {
+            $arrayofstrings[$arrayofpieces[0]] = $arrayofpieces[1];
+        }
+    }
+}
+
 
 
 function NavigationBar ($buttontohighlight) {
+    global $arrayofstrings;
     ?>
     <div class= "Navcenter">
         <div class= "Navbar">
             <div class = "Mainlinks">
-    <li><a href="Home.php"Home<?php if ($buttontohighlight == "home"){
+    <li><a href="Home.php"Home<?php if ($buttontohighlight == "Home"){
                                    print ("class='active'");
         
-    } ?>>Home</a></li>
-    <li><a href="Nintendo switch.php"Nintendo switch <?php if ($buttontohighlight == "nintendoswitch"){
+    } ?>><?=$arrayofstrings["Home"]?></a></li>
+    <li><a href="Nintendo switch.php"Nintendo switch <?php if ($buttontohighlight == "Nintendoswitch"){
                                    print ("class='active'");
         
-    } ?>>Nintendoswitch</a></li>
-    <li><a href="Controller.php"Pro Controller <?php if ($buttontohighlight == "controller"){
+    } ?>><?=$arrayofstrings["Nintendoswitch"]?></a></li>
+    <li><a href="Controller.php"Pro Controller <?php if ($buttontohighlight == "Controller"){
                                    print ("class='active'");
         
-    } ?>>Controller</a></li>
+    } ?>><?=$arrayofstrings["Controller"]?></a></li>
     <li><a href="Accesories.php"Accesories <?php if ($buttontohighlight == "Accesories"){
                                    print ("class='active'");
         
-    } ?>>Accesories</a></li>
+    } ?>><?=$arrayofstrings["Accessories"]?></a></li>
     <?php if(!$_SESSION["UserLoggedIn"]){
         ?>
         <li><a href="Register.php"Accesories <?php if ($buttontohighlight == "Register"){
                                    print ("class='active'");
         
-    } ?>>Register</a></li>
+    } ?>><?=$arrayofstrings["Register"]?></a></li>
     <?php
     }
     ?>
@@ -45,9 +69,9 @@ function NavigationBar ($buttontohighlight) {
     <li><a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
                                    print ("class='active'");
         
-    } ?>><?php if ($_SESSION["UserLoggedIn"]) { print("login"); 
+    } ?>><?php if ($_SESSION["UserLoggedIn"]) { print($arrayofstrings["login"]); 
     } 
-    else { print("log-out");}?></a></li>
+    else { print($arrayofstrings["log-out"]);}?></a></li>
 
 <?php //var_dump($_SESSION);
             if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 1) {
@@ -56,14 +80,27 @@ function NavigationBar ($buttontohighlight) {
                 echo ">Admin</a></li>";
             } ?>
     
-     <li><a href="../pages_fr/Home.php">francais</a></li>
+    
+
+     <?php
+     if($_SESSION["language"] == "EN"){
+        ?>
+        <li><a href="../pages_fr/Home.php">francais</a></li>
+        <?php
+     }
+     else {
+        ?>
+        
+        <?php
+     }
+     ?>
 
      <div class="Icons">
         <div><?php if($_SESSION["UserLoggedIn"]){
-            print("Welcome" . $_SESSION["User"]);
+            print($arrayofstrings["Welcome"] . " ". $_SESSION["User"]);
         }
         else{
-            print("unknown user");
+            print($arrayofstrings["NoUser"]);
         }
         ?>
         </div>

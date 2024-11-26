@@ -69,13 +69,12 @@ function NavigationBar ($buttontohighlight) {
     <?php
 
      function userAlreadyExists($checkUser) {
-        $SESSION["Administrator"] = false;
         $fileUsers = fopen("Clients.csv", "r");
         while (!feof($fileUsers)) {
             $existingUser= fgets($fileUsers);
             $existingArrayForUser = explode(";", $existingUser);
             if($existingArrayForUser [0] == "Administrator"){
-                $SESSION["Administrator"] = true;
+                $_SESSION["Administrator"] = true;
             }
             if ($existingArrayForUser [0] == $checkUser){
               return true;

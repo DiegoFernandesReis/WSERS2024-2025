@@ -85,12 +85,12 @@ function NavigationBar ($buttontohighlight) {
      <?php
      if($_SESSION["language"] == "EN"){
         ?>
-        <li><a href="../pages_fr/Home.php">francais</a></li>
+        <li><a href="Home.php?language=FR">francais</a></li>
         <?php
      }
      else {
         ?>
-        
+        <li><a href="Home.php?language=EN">English</a></li>
         <?php
      }
      ?>

@@ -43,16 +43,18 @@ function NavigationBar ($buttontohighlight) {
     } 
     else { print("log-out");}?></a></li>
 
-<li><a href="Admin.php"Accesories <?php if ($buttontohighlight == "Admin"){
-                                   print ("class='active'");
-        
-    } ?>>Admin</a></li>
+<?php //var_dump($_SESSION);
+            if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 1) {
+                echo "<li><a href='Admin.php'";
+                if ($buttonToHighlight == "admin") print("class='active'");
+                echo ">Admin</a></li>";
+            } ?>
     
      <li><a href="../pages_fr/Home.php">francais</a></li>
 
      <div class="Icons">
         <div><?php if($_SESSION["UserLoggedIn"]){
-            print("Welcome" . $_SESSION["user"]);
+            print("Welcome" . $_SESSION["User"]);
         }
         else{
             print("unknown user");
@@ -67,7 +69,21 @@ function NavigationBar ($buttontohighlight) {
 }
 ?>
     <?php
-
+    function type($user){
+        if(!userAlreadyExists($user)){
+            return 0;
+        }
+        $fileUsers = fopen("Clients.csv", "r");
+        while (!feof($fileUsers)) {
+            $existingUser= fgets($fileUsers);
+            $existingArrayForUser = explode(";", $existingUser);
+            if($existingArrayForUser [0] == $user){
+                return $existingArrayForUser [2];
+            }
+            
+            
+        }
+    }
      function userAlreadyExists($checkUser) {
         $fileUsers = fopen("Clients.csv", "r");
         while (!feof($fileUsers)) {

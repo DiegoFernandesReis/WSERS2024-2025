@@ -24,7 +24,7 @@
                 print("Ok, your password is correct");
                 $_SESSION["UserLoggedIn"]=true;
                 $_SESSION["User"]=$_POST["username"];
-               
+                $_SESSION["usertype"]= type($_SESSION["User"]);
             }
             else{
                 print("Invalid password");

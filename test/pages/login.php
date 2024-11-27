@@ -25,6 +25,7 @@
                 $_SESSION["UserLoggedIn"]=true;
                 $_SESSION["User"]=$_POST["username"];
                 $_SESSION["usertype"]= type($_SESSION["User"]);
+                header("Refresh:0");
             }
             else{
                 print("Invalid password");

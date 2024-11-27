@@ -76,8 +76,10 @@ function NavigationBar ($buttontohighlight) {
 <?php //var_dump($_SESSION);
             if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 1) {
                 echo "<li><a href='Admin.php'";
-                if ($buttontohighlight == "admin") print("class='active'");
-                echo ">Admin</a></li>";
+                if ($buttontohighlight == "Admin") print("class='active'");
+                ?>
+                ><?=$arrayofstrings["Admin"]?></a></li>;
+                <?php
             } ?>
     
     
@@ -162,4 +164,5 @@ function checkUsersPassword($givenUser, $givenPassword){
     }
     return false;
 }
+
 

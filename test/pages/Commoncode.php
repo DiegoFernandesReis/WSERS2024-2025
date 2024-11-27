@@ -82,24 +82,11 @@ function NavigationBar ($buttontohighlight) {
                 <?php
             } ?>
     <form>
-    <select name="language" onchange="this.form.Submit()">
+    <select name="language" onchange="this.form.submit()">
         <option value="EN" <?=$_SESSION["language"]== "EN" ? "selected" : ""?>>English</option>
         <option value="FR" <?=$_SESSION["language"]== "FR" ? "selected" : ""?>>French</option>
     </select>
     </form>
-
-     <?php
-     if($_SESSION["language"] == "EN"){
-        ?>
-        <li><a href="Home.php?language=FR">francais</a></li>
-        <?php
-     }
-     else {
-        ?>
-        <li><a href="Home.php?language=EN">English</a></li>
-        <?php
-     }
-     ?>
 
      <div class="Icons">
         <div><?php if($_SESSION["UserLoggedIn"]){

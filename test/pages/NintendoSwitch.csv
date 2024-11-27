@@ -1,3 +1,3 @@
-﻿Productid;ProductName;Price;Description;Count;Image
-1;Nintendo Switch;299,99 €;The Switch is brand new and it has a memory of 32 GB;10;Nintendo Switch.jpg
-2;Nintendo Switch lite;299,99 €;The Switch lite is brand new and it has a memory of 32 GB;20;nintendo switch lite.png
+﻿Productid;ProductNameEN;Price;Description;Count;Image;
+1;Nintendo Switch;299,99 €;The Switch is brand new and it has a memory of 32 GB;10;Nintendo switch.jpg;
+2;Nintendo Switch lite;299,99 €;The Switch lite is brand new and it has a memory of 32 GB;20;nintendo switch lite.png;

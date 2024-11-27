@@ -29,10 +29,16 @@
  
                 
                     <div> <?=($_SESSION["language"] == "EN") ?$arrayOfPieces[1]:$arrayOfPieces[6] ?></div>
+                    <?php  if(isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
+                        
+                        ?>
+                        <div class="Navcenter"><?=$arrayOfPieces[8] ?></div><?php
+                    }
+                    ?>
                     <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
                     <div class="OneProduct"> <?= $_SESSION["language"]== "EN" ? $arrayOfPieces[3]: $arrayOfPieces[7] ?></div>
-                   <div class="OneProduct"><?=$arrayofstrings["inventory"] ?> <?= $arrayOfPieces[4] ?></div>
+                   <div class="OneProduct"><?= $arrayofstrings["Inventory"]; ?><?= $arrayOfPieces[4] ?></div>
                 
         <?php
             }

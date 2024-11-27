@@ -51,7 +51,7 @@
     
     ?>
    
-    <h1>To Register, please fill in the following form: </h1>
+    <h1><?=$arrayofstrings["RegisterMessage"]?>: </h1>
 
     <form method="POST">
     <input type="text" name="username" placeholder="Enter your username" />

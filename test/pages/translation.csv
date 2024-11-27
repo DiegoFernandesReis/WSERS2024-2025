@@ -11,3 +11,8 @@ Controller;Controller;Manette
 Nintendoswitch;Nintendoswitch;Nintendoswitch
 Admin;Admin;Administrateur
 Welcome;Welcome;Bienvenue
+RegisterMessage;To Register fill the following form;Pour Enregistrer remplissez le format
+Enterusername;Enter your username;Entrer le non d'utilisateur
+Choosepassword;Please choose a password; Choissisez un mot de passe
+Retypepassword;Please retype the password; Retapez le password
+Createaccount;Create acount; Creé le compte

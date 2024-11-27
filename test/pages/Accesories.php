@@ -10,6 +10,7 @@
 <?php
     include_once("Commoncode.php");
     NavigationBar("Accesories");
+    global $arrayofstrings;
     ?>
 
     <div class="AllProducts">
@@ -20,18 +21,18 @@
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
             //print("<div>" . $line . "</div>");
-            if (count($arrayOfPieces) == 6) {
+            if (count($arrayOfPieces) == 8) {
  
  
         ?>
  
  
                 
-                    <div> <?= $arrayOfPieces[1] ?></div>
+                    <div> <?=($_SESSION["language"] == "EN") ?$arrayOfPieces[1]:$arrayOfPieces[6] ?></div>
                     <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
-                    <div class="OneProduct"> <?= $arrayOfPieces[3] ?></div>
-                   <div class="OneProduct">Inventory: <?= $arrayOfPieces[4] ?></div>
+                    <div class="OneProduct"> <?= $_SESSION["language"]== "EN" ? $arrayOfPieces[3]: $arrayOfPieces[7] ?></div>
+                   <div class="OneProduct"><?=$arrayofstrings["inventory"] ?> <?= $arrayOfPieces[4] ?></div>
                 
         <?php
             }

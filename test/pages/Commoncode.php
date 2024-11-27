@@ -81,8 +81,12 @@ function NavigationBar ($buttontohighlight) {
                 ><?=$arrayofstrings["Admin"]?></a></li>
                 <?php
             } ?>
-    
-    
+    <form>
+    <select name="language" onchange="this.form.Submit()">
+        <option value="EN" <?=$_SESSION["language"]== "EN" ? "selected" : ""?>>English</option>
+        <option value="FR" <?=$_SESSION["language"]== "FR" ? "selected" : ""?>>French</option>
+    </select>
+    </form>
 
      <?php
      if($_SESSION["language"] == "EN"){

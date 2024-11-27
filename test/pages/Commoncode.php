@@ -69,16 +69,16 @@ function NavigationBar ($buttontohighlight) {
     <li><a href="login.php"Accesories <?php if ($buttontohighlight == "login"){
                                    print ("class='active'");
         
-    } ?>><?php if ($_SESSION["UserLoggedIn"]) { print($arrayofstrings["login"]); 
+    } ?>><?php if ($_SESSION["UserLoggedIn"]) { print($arrayofstrings["log-out"]); 
     } 
-    else { print($arrayofstrings["log-out"]);}?></a></li>
+    else { print($arrayofstrings["login"]);}?></a></li>
 
 <?php //var_dump($_SESSION);
             if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 1) {
                 echo "<li><a href='Admin.php'";
                 if ($buttontohighlight == "Admin") print("class='active'");
                 ?>
-                ><?=$arrayofstrings["Admin"]?></a></li>;
+                ><?=$arrayofstrings["Admin"]?></a></li>
                 <?php
             } ?>
     

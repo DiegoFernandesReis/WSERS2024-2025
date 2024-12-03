@@ -13,7 +13,17 @@ Admin;Admin;Administrateur
 Welcome;Welcome;Bienvenue
 RegisterMessage;To Register fill the following form;Pour Enregistrer remplissez le format
 Enterusername;Enter your username;Entrer le non d'utilisateur
-Choosepassword;Please choose a password; Choissisez un mot de passe
-Retypepassword;Please retype the password; Retapez le password
-Createaccount;Create acount; Creé le compte
-Inventory;Inventory; inventaire;
+Choosepassword;Please choose a password;Choissisez un mot de passe
+Retypepassword;Please retype the password;Retapez le password
+Createaccount;Create acount;Creé le compte
+Inventory;Inventory;inventaire;
+Passwordnotmatch;Password do not match. Please try again;Password incorrect. Ressayez a nouveau
+Typeusername;Type your username;Saisissez vos Nom d'utilisateur
+Enterpassword;Enter a password;Saisissez votre mot de passe
+followingproducts;The following products on sale;les produits suivants en vente
+notdatabase;Your username is not in our database;votre nom d'utilisateur n'est pas dans notre base de données
+invalidpassword;Invalid password;mot de passe invalide
+Registration;Registration successfully;inscription réussie
+alreadyexists;User already exists, pick another one;l'utilisateur existe deja, choisissez-en un autre
+Accesories;Accessories;Accessoires
+

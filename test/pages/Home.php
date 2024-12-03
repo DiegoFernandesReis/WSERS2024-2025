@@ -12,17 +12,17 @@
     NavigationBar("home");
     ?>
       
-    <h1>Nintendo switch online shop</h1>
+    <h1><?=$arrayofstrings["WelcomeMessage"]?></h1>
 
 
-    <h2>The following products on sale</h2>
+    <h2><?=$arrayofstrings["followingproducts"]?></h2>
 
     <dl>
-      <dd><a href="Controller.php">Pro controller</a></dd>
+      <dd><a href="Controller.php"><?=$arrayofstrings["Controller"]?></a></dd>
       <dt><img src="../images/controller.jpeg"></dt>
-      <dd><a href="Nintendo switch.php">Nintendo switch</a></dd>
+      <dd><a href="Nintendo switch.php"><?=$arrayofstrings["Nintendoswitch"]?></a></dd>
       <dt><img src="../images/Nintendo switch.jpg"></dt>
-      <dd><a href="Accesories.php">Accessories</a></dd>
+      <dd><a href="Accesories.php"><?=$arrayofstrings["Accesories"]?></a></dd>
       <dt><img src="../images/accessories.jpeg" width="400 px"></dt>
     </dl>
     

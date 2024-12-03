@@ -35,17 +35,17 @@
         if($_POST["psw"] == $_POST["pswAgain"]) {
             $fileUsers= fopen("Clients.csv","a");
             if(userAlreadyExists($_POST["username"])){
-                print("User already exists, pick another one");
+                print($arrayofstrings["alreadyexists"]);
             }
             else{
             
             $goodPassword= str_replace(";","#", $_POST["psw"]);
            // print($goodPassword);
                 fputs($fileUsers, "\n" . $_POST["username"] . ";" . $goodPassword . ";" );
-                print("Registration succesfully");
+                print($arrayofstrings["Registration"]);
             }
         } else {
-            print("Password do not match. Please try again !");
+            print($arrayofstrings["passwordnotmatch"]);
         }
     }
     
@@ -54,10 +54,10 @@
     <h1><?=$arrayofstrings["RegisterMessage"]?>: </h1>
 
     <form method="POST">
-    <input type="text" name="username" placeholder="Enter your username" />
-    <input type="password" name="psw" placeholder="Please choose a password" />
-    <input type="password" name="pswAgain" placeholder="Please type the password" />
-    <input type="submit" value="Create account">
+    <input type="text" name="username" placeholder="><?=$arrayofstrings["Enterusername"]?>" />
+    <input type="password" name="psw" placeholder="><?=$arrayofstrings["Choosepassword"]?>" />
+    <input type="password" name="pswAgain" placeholder="><?=$arrayofstrings["Retypepassword"]?>" />
+    <input type="submit" value="><?=$arrayofstrings["Createaccount"]?>">
 </form>
 </body>
 </html>

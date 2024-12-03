@@ -28,11 +28,11 @@
                 header("Refresh:0");
             }
             else{
-                print("Invalid password");
+                print($arrayofstrings["invalidpassword"]);
             }
         }
         else{
-            print("Your username is not in our database");
+            print($arrayofstrings["RegisterMessage"]);
         }
     }
 
@@ -50,8 +50,8 @@
         <h1>Login :</h1>
 
         <form method="POST">
-        <input type="text" name="username" placeholder="Type your username" />
-        <input type="password" name="psw" placeholder=" Enter a password" />
+        <input type="text" name="username" placeholder="><?=$arrayofstrings["Typeusername"]?>" />
+        <input type="password" name="psw" placeholder="><?=$arrayofstrings["Enterpassword"]?>" />
         <input type="submit" value="login">
         </form>
     <?php

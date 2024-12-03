@@ -20,7 +20,7 @@
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
             //print("<div>" . $line . "</div>");
-            if (count($arrayOfPieces) == 8) {
+            if (count($arrayOfPieces) == 11) {
  
  
         ?>
@@ -31,7 +31,8 @@
                     <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
                     <div class="OneProduct"><?= $_SESSION["language"]== "EN" ? $arrayOfPieces[3]: $arrayOfPieces[7] ?></div>
-                   <div class="OneProduct"><?=$arrayofstrings["Inventory"]?><?= $arrayOfPieces[4] ?></div>
+                    <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
+                   <button class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?></button>
                 
         <?php
             }

@@ -24,10 +24,10 @@ while(!feof($fileTranslation)){
     $arrayofpieces = explode(";",$line);
     if(count($arrayofpieces)==3) {
         if($_SESSION["language"]== "EN"){
-            $arrayofstrings[$arrayofpieces[0]] = $arrayofpieces[0];
+            $arrayofstrings[$arrayofpieces[0]] = $arrayofpieces[1];
         }
         else {
-            $arrayofstrings[$arrayofpieces[0]] = $arrayofpieces[1];
+            $arrayofstrings[$arrayofpieces[0]] = $arrayofpieces[2];
         }
     }
 }

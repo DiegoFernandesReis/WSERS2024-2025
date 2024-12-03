@@ -54,10 +54,10 @@
     <h1><?=$arrayofstrings["RegisterMessage"]?>: </h1>
 
     <form method="POST">
-    <input type="text" name="username" placeholder="><?=$arrayofstrings["Enterusername"]?>" />
-    <input type="password" name="psw" placeholder="><?=$arrayofstrings["Choosepassword"]?>" />
-    <input type="password" name="pswAgain" placeholder="><?=$arrayofstrings["Retypepassword"]?>" />
-    <input type="submit" value="><?=$arrayofstrings["Createaccount"]?>">
+    <input type="text" name="username" placeholder="<?=$arrayofstrings["Enterusername"]?>" />
+    <input type="password" name="psw" placeholder="<?=$arrayofstrings["Choosepassword"]?>" />
+    <input type="password" name="pswAgain" placeholder="<?=$arrayofstrings["Retypepassword"]?>" />
+    <input type="submit" value="><?= $arrayofstrings["Createaccount"]?>" />
 </form>
 </body>
 </html>

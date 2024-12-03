@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+    include_once("Commoncode.php");
+    NavigationBar("busket");
+    ?>
 </body>
 </html>

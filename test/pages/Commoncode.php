@@ -73,6 +73,12 @@ function NavigationBar ($buttontohighlight) {
     } 
     else { print($arrayofstrings["login"]);}?></a></li>
 
+
+     <li><a href="basket.php" basket<?php if ($buttontohighlight == "basket"){
+                                   print ("class='active'");
+        
+    } ?>><?=$arrayofstrings["Basket"]?></a></li>
+
 <?php //var_dump($_SESSION);
             if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 1) {
                 echo "<li><a href='Admin.php'";

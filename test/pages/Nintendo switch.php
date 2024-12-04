@@ -34,10 +34,10 @@
  
  
                 
-                    <div> <?= $arrayOfPieces[1] ?></div>
+                    
                     <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
-                    <div class="OneProduct"> <?= $_SESSION["language"]== "EN" ? $arrayOfPieces[3]: $arrayOfPieces[7] ?></div>
+                    <div class="OneProduct"> <?php if($_SESSION["language"]== "EN") print ($arrayOfPieces[3]); else print($arrayOfPieces[7]) ?></div>
                     <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
                    <button class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?></button>
                    

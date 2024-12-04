@@ -32,10 +32,21 @@
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
                     <div class="OneProduct"><?= $_SESSION["language"]== "EN" ? $arrayOfPieces[3]: $arrayOfPieces[7] ?></div>
                     <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
-                   <button class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?></button>
+                    <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?>>
                 
         <?php
             }
+        }
+        ?>
+<?php
+function basket(){
+            global $arrayOfPieces;
+            $filebasket=fopen("basket.csv", "a");
+            fwrite($filebasket, "\n". $arrayOfPieces[1] . ";" . $arrayOfPieces[2] . ";");
+            fclose($filebasket);
+        }
+        if(isset($_POST["mybasket"])){
+            basket();
         }
         ?>
     </div>

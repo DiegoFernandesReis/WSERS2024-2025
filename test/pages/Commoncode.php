@@ -34,6 +34,8 @@ while(!feof($fileTranslation)){
 
 
 
+
+
 function NavigationBar ($buttontohighlight) {
     global $arrayofstrings;
     ?>

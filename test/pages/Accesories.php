@@ -59,7 +59,7 @@
             global $name;
             global $arrayOfPieces;
             $filebasket=fopen("basket.csv", "a");
-            fwrite($filebasket, "\n". $arrayOfPieces[1] . ";" . $arrayOfPieces[2] . ";");
+            fwrite($filebasket, "\n". $name . ";" . $Price . ";");
             fclose($filebasket);
         }
         if(isset($_POST["mybasket"])){

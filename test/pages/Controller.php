@@ -32,25 +32,31 @@
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
                     <div class="OneProduct"><?= $_SESSION["language"]== "EN" ? $arrayOfPieces[3]: $arrayOfPieces[7] ?></div>
                     <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
-                      <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?>>
+                    <form method="POST">
+                    <input type="hidden" name="item" value="<?= $arrayOfPieces[1]?>">
+                    <input type="hidden" name="money" value="<?= $arrayOfPieces[2] ?>">
+                    <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?>> 
+                    </form>
                     
-
-                  
-                    
-                
+                    <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                    $Price=$_POST["money"];
+                    $name=$_POST["item"];
+                }
+                ?>
         <?php
             }
         }
         ?>
 <?php
-function basket(){
+function basket($name,$Price){
             global $arrayOfPieces;
             $filebasket=fopen("basket.csv", "a");
-            fwrite($filebasket, "\n". $arrayOfPieces[1]. ";" . $arrayOfPieces[2] . ";");
+            fwrite($filebasket, "\n". $name . ";" . $Price . ";");
             fclose($filebasket);
         }
         if(isset($_POST["mybasket"])){
-            basket();
+            basket($_POST["item"], $_POST["money"]);
         }
         ?>
     </div>

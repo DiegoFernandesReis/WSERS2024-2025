@@ -40,8 +40,8 @@
                     <div class="OneProduct"> <?php if ($_SESSION["language"]== "EN") print ($arrayOfPieces[3]); else print($arrayOfPieces[7]) ?></div>
                    <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
                    <form method="POST">
-                    <input type="hidden" name="boughtitem" value="<?php $arrayOfPieces[1]?>">
-                    <input type="hidden" name="Price" value="<?php $arrayOfPieces[2] ?>">
+                    <input type="hidden" name="boughtitem" value="<?= $arrayOfPieces[1]?>">
+                    <input type="hidden" name="Price" value="<?= $arrayOfPieces[2] ?>">
                    <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?>>
                 </form>
 
@@ -54,16 +54,13 @@
         <?php
             }
         }
-        function basket(){
-            global $Price;
-            global $name;
-            global $arrayOfPieces;
+        function basket($name, $Price){
             $filebasket=fopen("basket.csv", "a");
             fwrite($filebasket, "\n". $name . ";" . $Price . ";");
             fclose($filebasket);
         }
         if(isset($_POST["mybasket"])){
-            basket();
+            basket($_POST["boughtitem"], $_POST["Price"]);
         }
         ?>
     </div>

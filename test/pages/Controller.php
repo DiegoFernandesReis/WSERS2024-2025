@@ -32,19 +32,10 @@
                     <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
                     <div class="OneProduct"><?= $_SESSION["language"]== "EN" ? $arrayOfPieces[3]: $arrayOfPieces[7] ?></div>
                     <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
-                    <form method="POST">
-                      <input type="hidden" name="item" value="<?php $arrayOfPieces[1]?>">
-                      <input type="hidden" name="money" value="<?php $arrayOfPieces [2]?>">
                       <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?>>
-                    </form>
-
-                    <?php 
-                     if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                      $Price=$_POST["money"];
-                      $name=$_POST["item"];
-                  }
                     
-                    ?>
+
+                  
                     
                 
         <?php
@@ -55,7 +46,7 @@
 function basket(){
             global $arrayOfPieces;
             $filebasket=fopen("basket.csv", "a");
-            fwrite($filebasket, "\n". $name. ";" . $Price . ";");
+            fwrite($filebasket, "\n". $arrayOfPieces[1]. ";" . $arrayOfPieces[2] . ";");
             fclose($filebasket);
         }
         if(isset($_POST["mybasket"])){

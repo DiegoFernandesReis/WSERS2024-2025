@@ -9,8 +9,13 @@
     <?php
     include_once("Commoncode.php");
     NavigationBar("busket");
-    ?>
+    
 
+    if(isset($_POST['Clear Button'])){
+        $myFile=fopen("basket.csv", "w");
+        fclose($myFile);
+    }
+    ?>
     <div class="AllProducts">
         <?php
         $myFile = fopen("basket.csv" , "r");
@@ -36,7 +41,11 @@
                 <?php
             }
         }
+        fclose($myFile);
         ?>
+       <form method="POST">
+       <input type="submit" value="Clear Button" name="Clear Button">
+       </form>
     
 </body>
 </html>

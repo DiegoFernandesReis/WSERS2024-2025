@@ -50,8 +50,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if (count($arrayOfPieces) == 3) {
  
         ?>
- 
- 
+    
+       
                     <div> <?=($_SESSION["language"] == "EN") ?$arrayOfPieces[0]:$arrayOfPieces[6] ?></div>
                     <?php  if(isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
                         

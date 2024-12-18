@@ -16,7 +16,7 @@
         print $basket. "<br>";
     }
 }else{
-    print("NO items in your basket");
+    print("No items in your basket");
 }
 
 function basket(){

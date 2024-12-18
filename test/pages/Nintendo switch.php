@@ -49,6 +49,13 @@
                     $Price=$_POST["euro"];
                     $name=$_POST["bought"];
                 }
+                if(!isset($_SESSION["cart"])){
+                    $_SESSION["cart"]=[];
+                }
+            
+                if(isset($_POST["mybasket"])){
+                    array_push($_SESSION["cart"], $_POST["bought"],$_POST["euro"]);
+                }
                 ?>
                    
                 

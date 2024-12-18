@@ -62,7 +62,15 @@
         if(isset($_POST["mybasket"])){
             basket($_POST["boughtitem"], $_POST["Price"]);
         }
+        if(!isset($_SESSION["cart"])){
+            $_SESSION["cart"]=[];
+        }
+    
+        if(isset($_POST["mybasket"])){
+            array_push($_SESSION["cart"], $_POST["boughtitem"], $_POST["Price"]);
+        }
         ?>
+        
     </div>
 </body>
 </html>

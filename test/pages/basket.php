@@ -11,14 +11,37 @@
     NavigationBar("busket");
     
 
-    if(isset($_POST['Clear Button'])){
-        $myFile=fopen("basket.csv", "w");
-        fclose($myFile);
+    if(isset($_SESSION["cart"])){
+    foreach($_SESSION["cart"] as $basket){
+        print $basket. "<br>";
     }
+}else{
+    print("NO items in your basket");
+}
+
+function basket(){
+    array_splice($_SESSION["cart"],0);
+    header("Refresh:0");
+}
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(isset($_POST["Buy"])){
+        basket();
+    }
+}
+
+
     ?>
+    <form method="POST">
+       <input type="submit" value="Buy" name="Buy">
+       </form>
+
+
+    <!--To make html comment-->
     <div class="AllProducts">
         <?php
-        $myFile = fopen("basket.csv" , "r");
+        // To make php comment
+        /* To make a php comment with start and ending */
+        /*$myFile = fopen("basket.csv" , "r");
         $line = fgets($myFile);
         while (!feof($myFile)) {
             $line = fgets($myFile);
@@ -42,10 +65,10 @@
             }
         }
         fclose($myFile);
+        */
         ?>
-       <form method="POST">
-       <input type="submit" value="Clear Button" name="Clear Button">
-       </form>
+        
+       
     
 </body>
 </html>

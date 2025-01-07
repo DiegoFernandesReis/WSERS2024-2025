@@ -11,13 +11,17 @@
     include_once("Commoncode.php");
     NavigationBar("orders");
 
-    $myFile = fopen("Orders.csv" , "r");
-    $line = fgets($myFile);
-    while (!feof($myFile)) {
+    function orders(){
+        $time=date("d-m-y");
+        $myFile = fopen("Orders.csv" , "r");
         $line = fgets($myFile);
-        $arrayOfPieces = explode(";", $line);
-        //print("<div>" . $line . "</div>");
-        if (count($arrayOfPieces) == 3) {
+        while (!feof($myFile)) {
+            $line = fgets($myFile);
+            $arrayOfPieces = explode(";", $line);
+            //print("<div>" . $line . "</div>");
+            if (count($arrayOfPieces) == 3) {
+    }
+  
 
     ?>
       <div> <?=($_SESSION["language"] == "EN") ?$arrayOfPieces[0]:$arrayOfPieces[6] ?></div>

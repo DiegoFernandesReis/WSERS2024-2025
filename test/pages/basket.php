@@ -28,6 +28,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         basket();
     }
 }
+if(isset($_POST["buy"])){
+    buyitems();
+}
+function buyitems()
+{
+    $Time = date("d-m-y h:i:s");
+    $myorders = fopen("orders.csv", "a");
+    $items = "";
+    $fitem = true;
+    foreach ($_SESSION["mybasket"] as  $myorders => $item) {
+        if ($fitem == true) {
+            $items .= $item;
+            $fitem = false;
+        } else {
+            $items .= "," . $item;
+        }
+    }
+    fputs($orders, "\n" . $_SESSION["User"] . ";" . $Time . ";" . $items);
+    array_splice($_SESSION["mybasket"], 0);
+    header("refresh: 0");
+}
+
+if (isset($_SESSION["mybasket"])) {
+    $total = 0;
+    foreach ($_SESSION["mybasket"] as $basketline) {
+
+        $myFile = fopen("Accessories.csv", "r");
+        while ($line = fgets($myFile)) {
+            $arrayOfPieces = explode(";", $line);
+            if ($arrayOfPieces[0] == $basketline) {
+                print($arrayOfPieces[1] . " " . $arrayOfPieces[2] . "<br>");
+                $total += (int)$arrayOfPieces[2];
+            }
+        }
+    }
+    print("The total amount due is:" . $total . "€");
+}
 
     ?>
     <form method="POST">

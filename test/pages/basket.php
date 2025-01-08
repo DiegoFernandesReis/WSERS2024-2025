@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="../style.css?<?=time(); ?>">
+    <link rel="stylesheet" href="../style.css?<?= time(); ?>">
     <img src="../images/nintendo_banner.webp" id="image">
     <title>Document</title>
 </head>
@@ -9,67 +9,43 @@
     <?php
     include_once("Commoncode.php");
     NavigationBar("busket");
+
     
-
-    if(isset($_SESSION["cart"])){
-    foreach($_SESSION["cart"] as $basket){
-        print $basket. "<br>";
+    if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
+        echo "Items in your basket:<br>";
+        foreach ($_SESSION["cart"] as $basket) {
+            echo $basket . "<br>";
+        }
+    } else {
+        echo "No items in your basket.";
     }
-}else{
-    print("No items in your basket");
-}
 
-function basket(){
-    array_splice($_SESSION["cart"],0);
-    header("Refresh:0");
-}
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset($_POST["Buy"])){
-        basket();
+    // Function to clear the cart
+    function basket() {
+        $Timestamp=date("y-m-d h:i:s");
+        $fileorder=fopen("Orders.csv", "a");
+        foreach($_SESSION["cart"] as $cart){
+            fwrite($fileorder, $cart . ";" . $_SESSION["User"] . ";" . " " .  $Timestamp);
+        }
+        fclose($fileorder);
+        $_SESSION["cart"] = []; 
+        echo "<p>Your basket has been cleared.</p>"; 
     }
-}
-if(isset($_POST["buy"])){
-    buyitems();
-}
-function buyitems()
-{
-    $Time = date("d-m-y h:i:s");
-    $myorders = fopen("orders.csv", "a");
-    $items = "";
-    $fitem = true;
-    foreach ($_SESSION["mybasket"] as  $myorders => $item) {
-        if ($fitem == true) {
-            $items .= $item;
-            $fitem = false;
-        } else {
-            $items .= "," . $item;
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["Buy"])) {
+            basket();  
         }
     }
-    fputs($orders, "\n" . $_SESSION["User"] . ";" . $Time . ";" . $items);
-    array_splice($_SESSION["mybasket"], 0);
-    header("refresh: 0");
-}
-
-if (isset($_SESSION["mybasket"])) {
-    $total = 0;
-    foreach ($_SESSION["mybasket"] as $basketline) {
-
-        $myFile = fopen("Accessories.csv", "r");
-        while ($line = fgets($myFile)) {
-            $arrayOfPieces = explode(";", $line);
-            if ($arrayOfPieces[0] == $basketline) {
-                print($arrayOfPieces[1] . " " . $arrayOfPieces[2] . "<br>");
-                $total += (int)$arrayOfPieces[2];
-            }
-        }
-    }
-    print("The total amount due is:" . $total . "€");
-}
 
     ?>
+    
     <form method="POST">
-       <input type="submit" value="Buy" name="Buy">
-       </form>
+        <input type="submit" value="Buy" name="Buy">
+    </form>
+</body>
+</html>
 
 
     <!--To make html comment-->

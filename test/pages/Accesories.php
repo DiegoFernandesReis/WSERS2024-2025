@@ -40,6 +40,7 @@
                     <div class="OneProduct"> <?php if ($_SESSION["language"]== "EN") print ($arrayOfPieces[3]); else print($arrayOfPieces[7]) ?></div>
                    <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
                    <form method="POST">
+                   <input type="hidden" name="productid" value="<?= $arrayOfPieces[0]?>">
                     <input type="hidden" name="boughtitem" value="<?= $arrayOfPieces[1]?>">
                     <input type="hidden" name="Price" value="<?= $arrayOfPieces[2] ?>">
                    <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?>>
@@ -56,7 +57,7 @@
         }
         function basket($name, $Price){
             $filebasket=fopen("basket.csv", "a");
-            fwrite($filebasket, "\n". $name . ";" . $Price . ";");
+            fwrite($filebasket, "\n". $name . ";" . $Price . ";" . $TotalPrice);
             fclose($filebasket);
         }
         if(isset($_POST["mybasket"])){
@@ -66,8 +67,10 @@
             $_SESSION["cart"]=[];
         }
     
+        $TotalPrice= 0;
         if(isset($_POST["mybasket"])){
             array_push($_SESSION["cart"], $_POST["boughtitem"], $_POST["Price"]);
+            $TotalPrice+= $_POST["Price"];
         }
         ?>
         

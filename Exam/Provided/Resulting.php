@@ -223,7 +223,7 @@
                 $elements=explode(",", $line);
 
                 if (count($elements) == 7){
-                    if($elements[2] <= ){
+                    if($elements[2] <= 20){
                         print("<td>" .$elements[0]. "</td><td>" .$elements[1]."</td><td> ".$elements[2]. "</td></tr></br>");
                     } 
                     else if($elements[2] >= 40) {

@@ -5,7 +5,6 @@ use myDbTestNo2;
 create table Countries (
     CountryId int primary key auto_increment,
     CountryName varchar(255)
-    
 );
 
 

@@ -15,12 +15,16 @@
 
     <div class="AllProducts">
         <?php
-        $myFile = fopen("Accessories.csv", "r");
+         $sqlinsert= $connection->prepare("Insert into shopusers() Values (?, ?);");
+         $sqlinsert->bind_param("ss", $_POST["username"], $hashedPassword);
+         $sqlinsert->execute();
+ 
+        /*$myFile = fopen("Accessories.csv", "r");
         $line = fgets($myFile);
         while (!feof($myFile)) {
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
-            //print("<div>" . $line . "</div>");
+            //print("<div>" . $line . "</div>");*/
             if (count($arrayOfPieces) == 11) {
  
  

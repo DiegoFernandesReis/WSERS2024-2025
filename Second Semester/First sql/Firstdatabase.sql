@@ -10,7 +10,7 @@ create table Countries (
 
 CREATE TABLE Users (
     UserId int  primary key auto_increment,
-    Name varchar(255),
+    UserName varchar(255),
     Email varchar(255),
     CountryId int,
     FOREIGN KEY (CountryId) REFERENCES Countries(CountryId)
@@ -21,6 +21,6 @@ Insert into Countries (CountryName) Values("Portugal");
 Insert into Countries (CountryName) Values("Germany");
 Insert into Countries (CountryName) Values("Yemen");
 
-Insert into Users (Name,Email,CountryId) Values("Dan","dude@lpem", 4);
-Insert into Users (Name,Email,CountryId) Values("Ayman","ayman@lpem", 3);
-Insert into Users (Name,Email,CountryId) Values("Diego","diego@lpem", 2);
+Insert into Users (UserName,Email,CountryId) Values("Dan","dude@lpem", 4);
+Insert into Users (UserName,Email,CountryId) Values("Ayman","ayman@lpem", 3);
+Insert into Users (UserName,Email,CountryId) Values("Diego","diego@lpem", 2);

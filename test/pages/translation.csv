@@ -28,4 +28,6 @@ alreadyexists;User already exists, pick another one;l'utilisateur existe deja, c
 Accesories;Accessories;Accessoires
 Basket;Basket;panier
 Orders;Orders;commandes
+email;email;email
+phonenumber;phonenumber;numero de télephone
 

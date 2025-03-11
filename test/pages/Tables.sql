@@ -51,12 +51,24 @@ Create table translations (
 );
 
 Create table Orders (
-
+username varchar(255),
+date varchar (255),
+ProductId varchar (255),
 );
 
-Create table Orderstoproducts (
-    
-);
+
+
+create table shopusers (
+    userId int not null auto_increment primary key,
+    username varchar(255) unique not null,
+    psw varchar (255) not null,
+    isAdmin int,
+    phonenumber int(255),
+    email varchar(255)
+)
+
+
+
 
 Insert into translations(ID, ENText, FRText) Values ("Home", "Home", "Acceuil");
 Insert into translations(ID, ENText, FRText) Values ("Products", "Products", "Produits");
@@ -87,6 +99,8 @@ Insert into translations(ID, ENText, FRText) Values ("alreadyexists", "User alre
 Insert into translations(ID, ENText, FRText) Values ("Accesories", "Accessories", "Accessoires");
 Insert into translations(ID, ENText, FRText) Values ("Basket", "Basket", "panier");
 Insert into translations(ID, ENText, FRText) Values ("Orders", "Orders", "commandes");
+Insert into translations(ID, ENText, FRText) Values ("email", "email", "email");
+Insert into translations(ID, ENText, FRText) Values ("phonenumber", "phonenumber", "numero de télephone");
 
 
 

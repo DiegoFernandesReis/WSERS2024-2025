@@ -32,6 +32,13 @@ while(!feof($fileTranslation)){
     }
 }
 
+$host = "localhost";
+$username = "root";
+$psw = "";
+$dbName = "WSERS2PROJECT";
+
+//step 1
+$connection = mysqli_Connect($host, $username, $psw, $dbName);
 
 
 
@@ -118,7 +125,7 @@ function NavigationBar ($buttontohighlight) {
 }
 ?>
     <?php
-    function type($user){
+    /*function type($user){
         if(!userAlreadyExists($user)){
             return 0;
         }
@@ -132,41 +139,45 @@ function NavigationBar ($buttontohighlight) {
             
             
         }
-    }
+    }*/
      function userAlreadyExists($checkUser) {
-        $fileUsers = fopen("Clients.csv", "r");
-        while (!feof($fileUsers)) {
-            $existingUser= fgets($fileUsers);
-            $existingArrayForUser = explode(";", $existingUser);
-            if($existingArrayForUser [0] == "Administrator"){
-                $_SESSION["Administrator"] = true;
-            }
-            if ($existingArrayForUser [0] == $checkUser){
-              return true;
-            }
-            
-            
+
+        global $connection;
+
+        $sqlselect = $connection->prepare("select * from shopusers where username = ?");
+        $sqlselect->bind_param("s", $checkUser);
+        $sqlselect->execute();
+        $result = $sqlselect->get_result();
+
+        if($result->num_rows==0){
+            return false;
         }
-        return false;
+        else{
+            return true;
+        }
+        
 
     }
 function checkUsersPassword($givenUser, $givenPassword){
-    $fileUsers = fopen("Clients.csv", "r");
-    while (!feof($fileUsers)) {
-        $existingUser = fgets($fileUsers);
-        $existingArrayForUser = explode(";", $existingUser);
-        if ($existingArrayForUser [0] == $givenUser){
-            if($existingArrayForUser[1] == $givenPassword){
-                return true;
-            }
-            else{
-                return false;
-            }
-          
-        }
-        
+    global $connection;
+    $sqlselect = $connection->prepare("select * from shopusers where username = ?");
+    $sqlselect->bind_param("s", $givenUser);
+    $sqlselect->execute();
+    $result = $sqlselect->get_result();
+    if($result->num_rows==0){
+        return false;
+    }
+    else{
+       $row = $result->fetch_assoc(); // this is A UNIQUE USER
+       //if($row["psw"] == $givenPassword){
+        if(password_verify( $givenPassword,$row["psw"])){
+        return true;
+       }
     }
     return false;
 }
+        
+
+
 
 

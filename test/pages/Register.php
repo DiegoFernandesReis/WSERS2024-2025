@@ -30,20 +30,24 @@
     form();
     }*/
     
-    if(isset($_POST["username"], $_POST["psw"] , $_POST["pswAgain"])){
+    if(isset($_POST["username"], $_POST["psw"] , $_POST["pswAgain"], $_POST["email"], $_POST["phonenumber"])){
         print("Registration in process...");
         if($_POST["psw"] == $_POST["pswAgain"]) {
-            $fileUsers= fopen("Clients.csv","a");
+
+            $userid=2;
             if(userAlreadyExists($_POST["username"])){
                 print($arrayofstrings["alreadyexists"]);
             }
             else{
-            
-            $goodPassword= str_replace(";","#", $_POST["psw"]);
-           // print($goodPassword);
-                fputs($fileUsers, "\n" . $_POST["username"] . ";" . $goodPassword . ";" );
+                // we will insert the user into the DB
+                $hashedPassword = password_hash($_POST["psw"], PASSWORD_DEFAULT);
+                $sqlinsert= $connection->prepare("Insert into shopusers(username,psw,phonenumber,email, isadmin) Values (?, ?,?,?,?);");
+                $sqlinsert->bind_param("ssis", $_POST["username"], $hashedPassword, $_POST["phonenumber"], $_POST["email"], $userid);
+                $sqlinsert->execute();
+        
                 print($arrayofstrings["Registration"]);
             }
+            
         } else {
             print($arrayofstrings["passwordnotmatch"]);
         }
@@ -57,6 +61,8 @@
     <input type="text" name="username" placeholder="<?=$arrayofstrings["Enterusername"]?>" />
     <input type="password" name="psw" placeholder="<?=$arrayofstrings["Choosepassword"]?>" />
     <input type="password" name="pswAgain" placeholder="<?=$arrayofstrings["Retypepassword"]?>" />
+    <input type="email" name="email" placeholder="<?=$arrayofstrings["email"]?>"/>
+    <input type="text" name="phonenumber" placeholder="<?=$arrayofstrings["phonenumber"]?>"/>
     <input type="submit" value="><?= $arrayofstrings["Createaccount"]?>" />
 </form>
 </body>

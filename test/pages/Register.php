@@ -34,15 +34,16 @@
         print("Registration in process...");
         if($_POST["psw"] == $_POST["pswAgain"]) {
 
-            $userid=2;
+            
             if(userAlreadyExists($_POST["username"])){
                 print($arrayofstrings["alreadyexists"]);
             }
             else{
+                $userid=2;
                 // we will insert the user into the DB
                 $hashedPassword = password_hash($_POST["psw"], PASSWORD_DEFAULT);
-                $sqlinsert= $connection->prepare("Insert into shopusers(username,psw,phonenumber,email, isadmin) Values (?, ?,?,?,?);");
-                $sqlinsert->bind_param("ssis", $_POST["username"], $hashedPassword, $_POST["phonenumber"], $_POST["email"], $userid);
+                $sqlinsert= $connection->prepare("Insert into shopusers(username,psw, phonenumber, email, isadmin) Values (?, ?,?,?,?);");
+                $sqlinsert->bind_param("ssiss", $_POST["username"], $hashedPassword, $_POST["phonenumber"], $_POST["email"], $userid);
                 $sqlinsert->execute();
         
                 print($arrayofstrings["Registration"]);

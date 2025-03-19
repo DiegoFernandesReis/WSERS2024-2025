@@ -13,7 +13,7 @@ Create table Nintendo (
     DescriptionFR varchar(255),
     buy int,
     countFR int,
-    buyFR int,
+    buyFR int
 );
 
 Create table Controller (
@@ -27,7 +27,7 @@ Create table Controller (
     DescriptionFR varchar(255),
     buy int,
     countFR int,
-    buyFR int,
+    buyFR int
 );
 
 Create table Accessories (
@@ -41,7 +41,7 @@ Create table Accessories (
     DescriptionFR varchar(255),
     buy int,
     countFR int,
-    buyFR int,
+    buyFR int
 );
 
 Create table translations (
@@ -53,7 +53,19 @@ Create table translations (
 Create table Orders (
 username varchar(255),
 date varchar (255),
-ProductId varchar (255),
+ProductId varchar (255)
+);
+
+
+Create table Order_placed(
+    orderplaced_id int primary key auto_increment,
+    username varchar(255),
+    timestamp varchar (255)
+);
+
+Create table Order_list(
+    FOREIGN KEY (orderplaced_id) REFERENCES Order_placed(orderplaced_id),
+    ProductId varchar (255)
 );
 
 
@@ -110,7 +122,7 @@ Insert into Nintendo (Productid,ProductNameEN,Price,Description,Count,Image,Prod
 
 
 Insert into Controller (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR) Values("1","Controller","59,99 €","The Controller is brand new, the battery lasts a long time before it runs out","Inventory:10","controller.jpeg","Controller","Le controleur est neuf, la batterie dure longtemps avant de s'épuiser","buy","Inventaire:10","acheter");
-Insert into Controller (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR) Values ("2","Joy-con","69,99 €","The Joy con is very nice if you want to play with your friends","Inventory:20","joycon.png","Joy-con;Le Joy-con est très sympa si vous voulez jouer avec vos amis","buy","Inventaire:20","acheter");
+Insert into Controller (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR) Values ("2","Joy-con","69,99 €","The Joy con is very nice if you want to play with your friends","Inventory:20","joycon.png","Joy-con","Le Joy-con est très sympa si vous voulez jouer avec vos amis","buy","Inventaire:20","acheter");
 
 
 Insert into Accessories (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR) Values("1","Charger","19,99","The Charger is brand new","Inventory:10","Charger.jpeg","Chargeur","Le Chargeur est nouveau","buy","Inventaire:10","acheter");

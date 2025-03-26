@@ -10,13 +10,13 @@ create table ProductType(
 Create table Products (
     ProductId int,
     ProductNameEN varchar(255),
-    Price int,
+    Price varchar (255),
     Description varchar(255),
     Count varchar(255),
     Image varchar(255),
     ProductNameFR varchar(255),
     DescriptionFR varchar(255),
-    buy int,
+    buy varchar (255),
     countFR int,
     buyFR int,
     ProductType int not null,
@@ -54,14 +54,15 @@ Create table Order_list(
 
 
 create table shopusers (
-    FOREIGN KEY (userId) REFERENCES Orders (userId),
+    userId int,
+    FOREIGN KEY (userId) REFERENCES Orders(Id),
     Id int not null auto_increment primary key,
     username varchar(255) unique not null,
     psw varchar (255) not null,
     isAdmin int,
     phonenumber int(255),
     email varchar(255)
-)
+);
 
 Insert into ProductType (Typename) values("Nintendo");
 Insert into ProductType (Typename) values("Controller");
@@ -104,9 +105,9 @@ Insert into translations(ID, ENText, FRText) Values ("phonenumber", "phonenumber
 
 
 
-Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("Nintendo Switch","299,99 €","The Switch is brand new and it has a memory of 32 GB","Inventory:10","Nintendo Switch.jpg","Nintendo Switch","La switch est toute neuve et elle dispose d'une mémoire de 32 Go","buy","Inventaire:20","acheter",1);
-Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values ("Nintendo Switch lite","299,99 €","The Switch lite is brand new and it has a memory of 32 GB","Inventaire:20","nintendo switch lite.png","Nintendo Switch lite","La switch est toute neuve et elle dispose d'une mémoire de 32 Go","buy","Inventaire:20","acheter",1);
-Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("Controller","59,99 €","The Controller is brand new, the battery lasts a long time before it runs out","Inventory:10","controller.jpeg","Controller","Le controleur est neuf, la batterie dure longtemps avant de s'épuiser","buy","Inventaire:10","acheter",2);
-Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values ("Joy-con","69,99 €","The Joy con is very nice if you want to play with your friends","Inventory:20","joycon.png","Joy-con","Le Joy-con est très sympa si vous voulez jouer avec vos amis","buy","Inventaire:20","acheter",2);
-Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("Charger","19,99","The Charger is brand new","Inventory:10","Charger.jpeg","Chargeur","Le Chargeur est nouveau","buy","Inventaire:10","acheter",3);
-Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("Gamecube Adapter", "39,99"," The Gamecube Adapter allows you to connect a gamecube controller on your switch","Inventory:20","adapter.png","Adaptataeur Gamecube","L'Adaptateur Gamecube vous permet de connecter une manette gamecube a votre switch","buy","Inventaire:20","acheter",3);
+Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("1","Nintendo Switch","299,99 €","The Switch is brand new and it has a memory of 32 GB","Inventory:10","Nintendo Switch.jpg","Nintendo Switch","La switch est toute neuve et elle dispose d'une mémoire de 32 Go","buy","Inventaire:20","acheter", 1);
+Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values ("2","Nintendo Switch lite","299,99 €","The Switch lite is brand new and it has a memory of 32 GB","Inventaire:20","nintendo switch lite.png","Nintendo Switch lite","La switch est toute neuve et elle dispose d'une mémoire de 32 Go","buy","Inventaire:20","acheter",1);
+Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("3","Controller","59,99 €","The Controller is brand new, the battery lasts a long time before it runs out","Inventory:10","controller.jpeg","Controller","Le controleur est neuf, la batterie dure longtemps avant de s'épuiser","buy","Inventaire:10","acheter",2);
+Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values ("4","Joy-con","69,99 €","The Joy con is very nice if you want to play with your friends","Inventory:20","joycon.png","Joy-con","Le Joy-con est très sympa si vous voulez jouer avec vos amis","buy","Inventaire:20","acheter",2);
+Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("5","Charger","19,99","The Charger is brand new","Inventory:10","Charger.jpeg","Chargeur","Le Chargeur est nouveau","buy","Inventaire:10","acheter",3);
+Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("6","Gamecube Adapter", "39,99"," The Gamecube Adapter allows you to connect a gamecube controller on your switch","Inventory:20","adapter.png","Adaptataeur Gamecube","L'Adaptateur Gamecube vous permet de connecter une manette gamecube a votre switch","buy","Inventaire:20","acheter",3);

@@ -17,55 +17,74 @@
 
     <div class="AllProducts">
         <?php
-        $myFile = fopen("Accessories.csv", "r");
+        $host = "localhost";
+        $username = "root";
+        $psw = "";
+        $dbName = "WSERS2PROJECT";
+
+        $connection = mysqli_connect($host, $username, $psw, $dbName);
+        $sqlselect= $connection ->prepare("select * from Products where ProductType = 3 ");
+        $sqlselect -> execute();
+        $result= $sqlselect -> get_result();
+        while($row=$result->fetch_assoc()){
+            $row["ProductId"];
+        /*$myFile = fopen("Accessories.csv", "r");
         $line = fgets($myFile);
         while (!feof($myFile)) {
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
-            //print("<div>" . $line . "</div>");*/
-            if (count($arrayOfPieces) == 11) {
+            print("<div>" . $line . "</div>");*/
 
+ 
+            if (count($row) == 12) {
+
+                $product_id=$row["ProductId"];
+                $productname= $_SESSION["language"] == "EN" ? $row["ProductNameEN"] : $row["ProductNameFR"];
+                $productPrice = $row["Price"];
+                $image = $row["Image"];
+                $buy = $row["buy"];
+                $buyfr = $row["buyFR"];
 
                 ?>
 
 
 
                 <div>
-                    <?= ($_SESSION["language"] == "EN") ? $arrayOfPieces[1] : $arrayOfPieces[6] ?>
+                    <?= ($_SESSION["language"] == "EN") ? $row["ProductNameEN"] : $row["ProductNameFR"] ?>
                 </div>
                 <?php if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
 
                     ?>
                     <div class="Navcenter">
-                        <?= $arrayOfPieces[8] ?>
+                        <?=$buy?>
                     </div>
                     <?php
                 }
                 ?>
-                <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
+                <img src="../images/<?= $image ?>" width="400px">
                 <div class="OneProduct">
-                    <?= $arrayOfPieces[2] ?>
+                    <?= print($productPrice) ?>
                 </div>
                 <div class="OneProduct">
                     <?php if ($_SESSION["language"] == "EN")
-                        print ($arrayOfPieces[3]);
+                        print ($row["Description"]);
                     else
-                        print ($arrayOfPieces[7]) ?>
+                        print ($row["DescriptionFR"]) ?>
                     </div>
                     <div class="OneProduct">
                     <?php if ($_SESSION["language"] == "EN")
-                        print ($arrayOfPieces[4]);
+                        print ($row["Count"]);
                     else
-                        print ($arrayOfPieces[9]) ?>
+                        print ($row["CountFR"]) ?>
                     </div>
                     <form method="POST">
-                        <input type="hidden" name="productid" value="<?= $arrayOfPieces[0] ?>">
-                    <input type="hidden" name="boughtitem" value="<?= $arrayOfPieces[1] ?>">
-                    <input type="hidden" name="Price" value="<?= $arrayOfPieces[2] ?>">
+                        <input type="hidden" name="productid" value="<?= print ($product_id) ?>">
+                    <input type="hidden" name="boughtitem" value="<?= print ($productname) ?>">
+                    <input type="hidden" name="Price" value="<?=  print $buy ?>">
                     <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN")
-                        print ($arrayOfPieces[8]);
+                        print ($buy);
                     else
-                        print ($arrayOfPieces[10]) ?>>
+                        print ($buyfr) ?>>
                     </form>
 
                     <?php
@@ -77,6 +96,7 @@
                 <?php
             }
         }
+
         
         function basket($name, $Price)
         {

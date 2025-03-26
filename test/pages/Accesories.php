@@ -27,7 +27,7 @@
         $sqlselect -> execute();
         $result= $sqlselect -> get_result();
         while($row=$result->fetch_assoc()){
-            $row["ProductId"];
+            
         /*$myFile = fopen("Accessories.csv", "r");
         $line = fgets($myFile);
         while (!feof($myFile)) {

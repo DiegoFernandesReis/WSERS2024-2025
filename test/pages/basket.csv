@@ -30,3 +30,12 @@ Charger1;<br />
 Charger1;<br />
 <b>Warning</b>:  Undefined variable $productprice in <b>C:\xampp\htdocs\WSERS\WSERS2024-2025\test\pages\Accesories.php</b> on line <b>84</b><br />
 1;0
+<br />
+<b>Warning</b>:  Undefined variable $arrayOfPieces in <b>C:\xampp\htdocs\WSERS\WSERS2024-2025\test\pages\Nintendo switch.php</b> on line <b>64</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\WSERS\WSERS2024-2025\test\pages\Nintendo switch.php</b> on line <b>64</b><br />
+;<br />
+<b>Warning</b>:  Undefined variable $arrayOfPieces in <b>C:\xampp\htdocs\WSERS\WSERS2024-2025\test\pages\Nintendo switch.php</b> on line <b>65</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\WSERS\WSERS2024-2025\test\pages\Nintendo switch.php</b> on line <b>65</b><br />
+;

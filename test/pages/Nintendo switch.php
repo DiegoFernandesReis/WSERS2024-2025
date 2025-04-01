@@ -14,35 +14,56 @@
     
    <div class="AllProducts">
         <?php
+        /*
         $myFile = fopen("NintendoSwitch.csv", "r");
         $line = fgets($myFile);
         while (!feof($myFile)) {
             $line = fgets($myFile);
             $arrayOfPieces = explode(";", $line);
-            //print("<div>" . $line . "</div>");
-            if (count($arrayOfPieces) == 11) {
- 
+            //print("<div>" . $line . "</div>"); */
+
+            $host = "localhost";
+            $username = "root";
+            $psw = "";
+            $dbName = "WSERS2PROJECT";
+    
+            $connection = mysqli_connect($host, $username, $psw, $dbName);
+            $sqlselect= $connection ->prepare("select * from Products where ProductType = 1 ");
+            $sqlselect -> execute();
+            $result= $sqlselect -> get_result();
+            while($row=$result->fetch_assoc()){
+                
+
+
+            if (count($row) == 12) {
+
+                $product_id=$row["ProductId"];
+                $productname= $_SESSION["language"] == "EN" ? $row["ProductNameEN"] : $row["ProductNameFR"];
+                $productPrice = $row["Price"];
+                $image = $row["Image"];
+                $buy = $row["buy"];
+                $buyfr = $row["buyFR"];
  
         ?>
-                 <div> <?=($_SESSION["language"] == "EN") ?$arrayOfPieces[1]:$arrayOfPieces[6] ?></div>
+                 <div> <?=($_SESSION["language"] == "EN") ?$row["ProductNameEN"]:$row["ProductNameFR"] ?></div>
                     <?php  if(isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
                         
                         ?>
-                        <div class="Navcenter"><?=$arrayOfPieces[8] ?></div><?php
+                        <div class="Navcenter"><?=$productname ?></div><?php
                     }
                     ?>
  
  
                 
                     
-                    <img src="../images/<?= $arrayOfPieces[5] ?>" width="400px">
-                    <div class="OneProduct"> <?= $arrayOfPieces[2] ?></div>
-                    <div class="OneProduct"> <?php if($_SESSION["language"]== "EN") print ($arrayOfPieces[3]); else print($arrayOfPieces[7]) ?></div>
-                    <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[4]);else print($arrayOfPieces[9]) ?></div>
+                    <img src="../images/<?= $image ?>" width="400px">
+                    <div class="OneProduct"> <?= $productPrice ?></div>
+                    <div class="OneProduct"> <?php if($_SESSION["language"]== "EN") print ($row["Description"]); else print($row["Description"]) ?></div>
+                    <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($row["Count"]);else print($row["CountFR"]) ?></div>
                     <form method="POST">
                     <input type="hidden" name="bought" value="<?= $arrayOfPieces[1]?>">
                     <input type="hidden" name="euro" value="<?= $arrayOfPieces[2] ?>">
-                    <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($arrayOfPieces[8]); else print($arrayOfPieces[10]) ?>>
+                    <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($buy); else print($buyfr) ?>>
                     </form>
                     <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST"){

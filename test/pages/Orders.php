@@ -17,16 +17,27 @@
     $arrayOfPieces = [];
 
 
-    $myfile = fopen("orders.csv", "r");
+    /*$myfile = fopen("orders.csv", "r");
     if ($myfile !== false) {
 
         while ($line = fgets($myfile)) {
             $arrayOfPieces[] = explode(";", $line);
         }
         fclose($myfile);
-    }
+    }*/
+    $host = "localhost";
+    $username = "root";
+    $psw = "";
+    $dbName = "WSERS2PROJECT";
 
-    if (count($arrayOfPieces) > 0) {
+    $connection = mysqli_connect($host, $username, $psw, $dbName);
+    $sqlselect= $connection ->prepare("select * from Orderlist ");
+    $sqlselect -> execute();
+    $result= $sqlselect -> get_result();
+    while($row=$result->fetch_assoc()){
+    
+
+    if (count($row) > 0) {
 
         $languageContent = ($_SESSION["language"] == "EN") ? $arrayOfPieces[0][0] : (isset($arrayOfPieces[6]) ? $arrayOfPieces[6][0] : "");  // Check for language content
     
@@ -52,6 +63,7 @@
             print ("<br>" . $pieces[0] . " " . $pieces[1] . " " . $pieces[2]);
         }
     }
+}
     ?>
 </body>
 

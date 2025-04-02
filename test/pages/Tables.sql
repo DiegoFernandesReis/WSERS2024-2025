@@ -48,7 +48,10 @@ Create table Order_placed(
 Create table Order_list(
     Orderplaced_id int,
     ProductId varchar (255),
-    FOREIGN KEY (Orderplaced_id) REFERENCES Order_placed(Orderplaced_id)
+    price int, 
+    ordersid int,
+    userid int,
+    FOREIGN KEY (Orderplaced_id) REFERENCES Orders(Id)
 );
 
 
@@ -110,4 +113,4 @@ Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,Prod
 Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("3","Controller","59,99 €","The Controller is brand new, the battery lasts a long time before it runs out","Inventory:10","controller.jpeg","Controller","Le controleur est neuf, la batterie dure longtemps avant de s'épuiser","buy","Inventaire:10","acheter",2);
 Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values ("4","Joy-con","69,99 €","The Joy con is very nice if you want to play with your friends","Inventory:20","joycon.png","Joy-con","Le Joy-con est très sympa si vous voulez jouer avec vos amis","buy","Inventaire:20","acheter",2);
 Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("5","Charger","19,99 €","The Charger is brand new","Inventory:10","Charger.jpeg","Chargeur","Le Chargeur est nouveau","buy","Inventaire:10","acheter",3);
-Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("6","Gamecube Adapter €", "39,99"," The Gamecube Adapter allows you to connect a gamecube controller on your switch","Inventory:20","adapter.png","Adaptataeur Gamecube","L'Adaptateur Gamecube vous permet de connecter une manette gamecube a votre switch","buy","Inventaire:20","acheter",3);
+Insert into Products (Productid,ProductNameEN,Price,Description,Count,Image,ProductNameFR,DescriptionFR,buy,CountFR,buyFR,ProductType) Values("6","Gamecube Adapter ", "39,99 €"," The Gamecube Adapter allows you to connect a gamecube controller on your switch","Inventory:20","adapter.png","Adaptataeur Gamecube","L'Adaptateur Gamecube vous permet de connecter une manette gamecube a votre switch","buy","Inventaire:20","acheter",3);

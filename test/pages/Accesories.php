@@ -43,7 +43,7 @@
                 $productPrice = $row["Price"];
                 $image = $row["Image"];
                 $buy = $row["buy"];
-                $buyfr = $row["buyFR"];
+                $buyFR = $row["buyFR"];
 
                 ?>
 
@@ -75,7 +75,7 @@
                     <?php if ($_SESSION["language"] == "EN")
                         print ($row["Count"]);
                     else
-                        print ($row["CountFR"]) ?>
+                        print ($row["countFR"]) ?>
                     </div>
                     <form method="POST">
                         <input type="hidden" name="productid" value="<?= print ($product_id) ?>">
@@ -84,7 +84,7 @@
                     <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN")
                         print ($buy);
                     else
-                        print ($buyfr) ?>>
+                        print ($buyFR) ?>>
                     </form>
 
                     <?php

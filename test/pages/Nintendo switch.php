@@ -58,8 +58,8 @@
                     
                     <img src="../images/<?= $image ?>" width="400px">
                     <div class="OneProduct"> <?= $productPrice ?></div>
-                    <div class="OneProduct"> <?php if($_SESSION["language"]== "EN") print ($row["Description"]); else print($row["Description"]) ?></div>
-                    <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($row["Count"]);else print($row["CountFR"]) ?></div>
+                    <div class="OneProduct"> <?php if($_SESSION["language"]== "EN") print ($row["Description"]); else print($row["DescriptionFR"]) ?></div>
+                    <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($row["Count"]);else print($row["countFR"]) ?></div>
                     <form method="POST">
                     <input type="hidden" name="bought" value="<?= $arrayOfPieces[1]?>">
                     <input type="hidden" name="euro" value="<?= $arrayOfPieces[2] ?>">

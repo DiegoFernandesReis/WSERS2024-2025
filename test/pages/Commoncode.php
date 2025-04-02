@@ -16,8 +16,8 @@ if(isset($_GET["language"])){
     $_SESSION["language"] = $_GET["language"];
 }
 
-$arrayofstrings=[];
-$fileTranslation=fopen("translation.csv","r");
+
+/*$fileTranslation=fopen("translation.csv","r");
 $line=fgets($fileTranslation);
 while(!feof($fileTranslation)){
     $line=fgets($fileTranslation);
@@ -30,7 +30,7 @@ while(!feof($fileTranslation)){
             $arrayofstrings[$arrayofpieces[0]] = $arrayofpieces[2];
         }
     }
-}
+}*/
 
 $host = "localhost";
 $username = "root";
@@ -39,6 +39,20 @@ $dbName = "WSERS2PROJECT";
 
 //step 1
 $connection = mysqli_Connect($host, $username, $psw, $dbName);
+
+$arrayofstrings=[];
+$sqlSelect = $connection->prepare("SELECT * FROM translations");
+$sqlSelect->execute();
+$result = $sqlSelect->get_result();
+while ($row = $result->fetch_assoc()) {
+    $row['ID'];
+    if (count($row) == 3) {
+        if ($_SESSION["language"] == "EN")
+            $arrayofstrings[$row['ID']] = $row['ENText'];
+        else
+            $arrayofstrings[$row['ID']] = $row['FRText'];
+    }
+}
 
 
 

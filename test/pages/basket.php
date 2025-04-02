@@ -35,21 +35,21 @@
         $sqlselect->execute();
 
         // Fetch the latest order_id
-        $getnumstatement = $connection->prepare("SELECT order_id FROM orders ORDER BY Timestamp DESC LIMIT 1");
+        $getnumstatement = $connection->prepare("SELECT Id FROM Orders ORDER BY Date DESC LIMIT 1");
         $getnumstatement->execute();
         $resultnum = $getnumstatement->get_result();
         $row3 = $resultnum->fetch_assoc();
 
         // Insert products into the order list
         foreach ($_SESSION["cart"] as $productId) {
-            $statement2 = $connection->prepare("SELECT * FROM Products WHERE product_id = ?");
+            $statement2 = $connection->prepare("SELECT * FROM Products WHERE ProductId = ?");
             $statement2->bind_param("i", $productId);
             $statement2->execute();
             $result2 = $statement2->get_result();
             $product = $result2->fetch_assoc();
 
             // Insert product into orderlist
-            $sqlinsert = $connection->prepare("INSERT INTO order_list (product_id, price, ordersid, userid) VALUES (?, ?, ?, ?)");
+            $sqlinsert = $connection->prepare("INSERT INTO Order_list (product_id, price, ordersid, userid) VALUES (?, ?, ?, ?)");
             $sqlinsert->bind_param("iiii", $product["product_id"], $product["price"], $row3["order_id"], $_SESSION["id"]);
             $sqlinsert->execute();
         }

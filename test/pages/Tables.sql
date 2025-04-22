@@ -10,7 +10,7 @@ create table ProductType(
 Create table Products (
     ProductId int,
     ProductNameEN varchar(255),
-    Price varchar (255),
+    Price int,
     Description varchar(255),
     Count varchar(255),
     Image varchar(255),
@@ -33,10 +33,10 @@ Create table translations (
 Create table Orders (
 
 Id int primary key auto_increment,
-userId varchar(255),
+userId int,
 username varchar(255),
 date varchar (255),
-ProductId varchar (255)
+ProductId int
 );
 
 

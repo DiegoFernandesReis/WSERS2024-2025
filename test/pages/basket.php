@@ -31,7 +31,7 @@
 
         // Insert order into the Orders table
         $sqlselect = $connection->prepare("INSERT INTO Orders(user_id, Date) VALUES(?, ?)");
-        $sqlselect->bind_param("is", $_SESSION["id"], $currentTime);
+        $sqlselect->bind_param("is", $_SESSION["Id"], $currentTime);
         $sqlselect->execute();
 
         // Fetch the latest order_id
@@ -50,7 +50,7 @@
 
             // Insert product into orderlist
             $sqlinsert = $connection->prepare("INSERT INTO Order_list (product_id, price, ordersid, userid) VALUES (?, ?, ?, ?)");
-            $sqlinsert->bind_param("iiii", $product["product_id"], $product["price"], $row3["order_id"], $_SESSION["id"]);
+            $sqlinsert->bind_param("iiii", $product["Product_id"], $product["price"], $row3["ordersid"], $_SESSION["Id"]);
             $sqlinsert->execute();
         }
 

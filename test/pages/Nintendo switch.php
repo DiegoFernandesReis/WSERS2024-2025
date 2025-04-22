@@ -61,8 +61,8 @@
                     <div class="OneProduct"> <?php if($_SESSION["language"]== "EN") print ($row["Description"]); else print($row["DescriptionFR"]) ?></div>
                     <div class="OneProduct"><?php if ($_SESSION["language"] == "EN") print($row["Count"]);else print($row["countFR"]) ?></div>
                     <form method="POST">
-                    <input type="hidden" name="bought" value="<?= $arrayOfPieces[1]?>">
-                    <input type="hidden" name="euro" value="<?= $arrayOfPieces[2] ?>">
+                    <input type="hidden" name="bought" value="<?= print ($product_id)?>">
+                    <input type="hidden" name="euro" value="<?= print ($productname) ?>">
                     <input class="OneProduct" name="mybasket" type="submit" value=<?php if ($_SESSION["language"] == "EN") print($buy); else print($buyfr) ?>>
                     </form>
                     <?php

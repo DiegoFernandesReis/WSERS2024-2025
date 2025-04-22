@@ -36,7 +36,7 @@ Create table Orders (
 Id int primary key auto_increment,
 userId int,
 username varchar(255),
-date varchar (255),
+date int,
 ProductId int
 );
 

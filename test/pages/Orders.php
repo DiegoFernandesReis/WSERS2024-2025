@@ -31,7 +31,7 @@
     $dbName = "WSERS2PROJECT";
 
     $connection = mysqli_connect($host, $username, $psw, $dbName);
-    $sqlselect = $connection->prepare("select * from Products ");
+    $sqlselect = $connection->prepare("select * from Products natural join Orders");
     $sqlselect->execute();
     $result = $sqlselect->get_result();
     while ($row = $result->fetch_assoc()) {
@@ -45,6 +45,7 @@
             $buy = $row["buy"];
             $buyfr = $row["buyFR"];
             $date = $row["date"];
+            
 
             $languageContent = ($_SESSION["language"] == "EN") ? $row["ProductNameEN"] : $row["ProductNameFR"];  // Check for language content
     
@@ -54,7 +55,7 @@
 
             if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
 
-                echo "<div class='Navcenter'>" . $arrayOfPieces[0][1] . "</div>";
+                echo "<div class='Navcenter'>" . $row["username"] . "</div>";
             }
 
 

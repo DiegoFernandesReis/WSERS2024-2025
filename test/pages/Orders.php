@@ -31,40 +31,48 @@
     $dbName = "WSERS2PROJECT";
 
     $connection = mysqli_connect($host, $username, $psw, $dbName);
-    $sqlselect= $connection ->prepare("select * from Order_list ");
-    $sqlselect -> execute();
-    $result= $sqlselect -> get_result();
-    while($row=$result->fetch_assoc()){
+    $sqlselect = $connection->prepare("select * from Products ");
+    $sqlselect->execute();
+    $result = $sqlselect->get_result();
+    while ($row = $result->fetch_assoc()) {
+
+
+        if (count($row) > 0) {
+            $product_id=$row["ProductId"];
+            $productname= $_SESSION["language"] == "EN" ? $row["ProductNameEN"] : $row["ProductNameFR"];
+            $productPrice = $row["Price"];
+            $image = $row["Image"];
+            $buy = $row["buy"];
+            $buyfr = $row["buyFR"];
+            $date = $row["date"];
+
+            $languageContent = ($_SESSION["language"] == "EN") ? $row["ProductNameEN"] : $row["ProductNameFR"];  // Check for language content
     
-
-    if (count($row) > 0) {
-
-        $languageContent = ($_SESSION["language"] == "EN") ? $arrayOfPieces[0][0] : (isset($arrayOfPieces[6]) ? $arrayOfPieces[6][0] : "");  // Check for language content
-    
-        // Output language-specific content
-        echo "<div>" . $languageContent . "</div>";
+            // Output language-specific content
+            echo "<div>" . $languageContent . "</div>";
 
 
-        if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
+            if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
 
-            echo "<div class='Navcenter'>" . $arrayOfPieces[0][1] . "</div>";
+                echo "<div class='Navcenter'>" . $arrayOfPieces[0][1] . "</div>";
+            }
+
+
+            echo "<div class='OneProduct'>" . print ($date) . "</div>";
+        } else {
+            echo "No data found in the file.";
         }
 
-
-        echo "<div class='OneProduct'>" . $arrayOfPieces[0][2] . "</div>";
-    } else {
-        echo "No data found in the file.";
+        /*$orderfile = fopen("Orders.csv", "r");
+        while (!feof($orderfile)) {
+            $file = fgets($orderfile);
+            $pieces = explode(";", $file);
+            if (count($pieces) >= 2) {
+                print ("<br>" . $pieces[0] . " " . $pieces[1] . " " . $pieces[2]);
+            }
+        }
+        */
     }
-
-    /*$orderfile = fopen("Orders.csv", "r");
-    while (!feof($orderfile)) {
-        $file = fgets($orderfile);
-        $pieces = explode(";", $file);
-        if (count($pieces) >= 2) {
-            print ("<br>" . $pieces[0] . " " . $pieces[1] . " " . $pieces[2]);
-        }
-    }*/
-}
     ?>
 </body>
 

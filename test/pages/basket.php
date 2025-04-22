@@ -30,7 +30,7 @@
         $connection = mysqli_connect($host, $username, $psw, $dbName);
 
         // Insert order into the Orders table
-        $sqlselect = $connection->prepare("INSERT INTO Orders(user_id, Date) VALUES(?, ?)");
+        $sqlselect = $connection->prepare("INSERT INTO Orders(userId, Date) VALUES(?, ?)");
         $sqlselect->bind_param("is", $_SESSION["Id"], $currentTime);
         $sqlselect->execute();
 
@@ -49,10 +49,11 @@
             $product = $result2->fetch_assoc();
 
             // Insert product into orderlist
-            $sqlinsert = $connection->prepare("INSERT INTO Order_list (product_id, price, ordersid, userid) VALUES (?, ?, ?, ?)");
+            $sqlinsert = $connection->prepare("INSERT INTO Order_list (ProductId, price, ordersid, userid) VALUES (?, ?, ?, ?)");
             $sqlinsert->bind_param("iiii", $product["Product_id"], $product["price"], $row3["ordersid"], $_SESSION["Id"]);
             $sqlinsert->execute();
         }
+        header("refresh:0");
 
         // Clear the cart after processing
         $_SESSION["cart"] = [];

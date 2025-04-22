@@ -20,6 +20,7 @@ Create table Products (
     countFR int,
     buyFR int,
     ProductType int not null,
+    date int,
     FOREIGN KEY (ProductType) REFERENCES ProductType(TypeId)
 );
 

@@ -8,7 +8,7 @@ create table ProductType(
 );
 
 Create table Products (
-    ProductId int,
+    ProductId int primary key auto_increment ,
     ProductNameEN varchar(255),
     Price int,
     Description varchar(255),
@@ -32,11 +32,13 @@ Create table translations (
 );
 
 Create table Orders (
+
 Id int primary key auto_increment,
 userId int,
 username varchar(255),
 date int,
-ProductId int
+ProductId int,
+FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
 );
 
 

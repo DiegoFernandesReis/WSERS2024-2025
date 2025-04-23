@@ -27,7 +27,7 @@
         $sqlselect->execute();
         $result = $sqlselect->get_result();
         while ($row = $result->fetch_assoc()) {
-            if (count($row) == 12) {
+            if (count($row) == 13) {
 
                 $product_id = $row["ProductId"];
                 $productname = $_SESSION["language"] == "EN" ? $row["ProductNameEN"] : $row["ProductNameFR"];

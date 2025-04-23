@@ -37,6 +37,17 @@
     while ($row = $result->fetch_assoc()) {
 
 
+        /*if ($row["status"] == 1) {
+            //to modify from pending to delivered, consult the table and change the status from 1(pending) to 2(delivered)
+        ?>
+            <div class="orders"> <?php print $arrayOfStrings["Status"] . ($arrayOfStrings["Pending"]) ?></div>
+
+        <?php } else {
+        ?>
+            <div class="orders"> <?php print $arrayOfStrings["Status"] . ($arrayOfStrings["Delivered"]) ?></div>
+        <?php
+        }*/
+
         if (count($row) > 0) {
             $product_id=$row["ProductId"];
             $productname= $_SESSION["language"] == "EN" ? $row["ProductNameEN"] : $row["ProductNameFR"];
@@ -55,7 +66,7 @@
 
             if (isset($_SESSION["usertype"]) && $_SESSION["usertype"] == 2) {
 
-                echo "<div class='Navcenter'>" . $row["username"] . "</div>";
+                echo "<div class='Navcenter'>" . $row["username"]. "</div>";
             }
 
 

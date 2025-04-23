@@ -37,17 +37,6 @@
     while ($row = $result->fetch_assoc()) {
 
 
-        /*if ($row["status"] == 1) {
-            //to modify from pending to delivered, consult the table and change the status from 1(pending) to 2(delivered)
-        ?>
-            <div class="orders"> <?php print $arrayOfStrings["Status"] . ($arrayOfStrings["Pending"]) ?></div>
-
-        <?php } else {
-        ?>
-            <div class="orders"> <?php print $arrayOfStrings["Status"] . ($arrayOfStrings["Delivered"]) ?></div>
-        <?php
-        }*/
-
         if (count($row) > 0) {
             $product_id=$row["ProductId"];
             $productname= $_SESSION["language"] == "EN" ? $row["ProductNameEN"] : $row["ProductNameFR"];
@@ -56,7 +45,18 @@
             $buy = $row["buy"];
             $buyfr = $row["buyFR"];
             $date = $row["date"];
+            $status = $row["status"];
             
+            
+        /*if ($row["status"] == 1) {
+            //to modify from pending to delivered, consult the table and change the status from 1(pending) to 2(delivered)
+        ?>
+            <div class="orders"> <?php print $row["Status"] . ($row["Pending"]) ?></div>
+
+        <?php } else {
+        ?>
+            <div class="orders"> <?php print $row["Status"] . ($row["Delivered"]) ?></div>
+        <?php*/
 
             $languageContent = ($_SESSION["language"] == "EN") ? $row["ProductNameEN"] : $row["ProductNameFR"];  // Check for language content
     
@@ -74,6 +74,7 @@
         } else {
             echo "No data found in the file.";
         }
+    
 
         /*$orderfile = fopen("Orders.csv", "r");
         while (!feof($orderfile)) {
@@ -85,6 +86,7 @@
         }*/
         
     }
+
     ?>
 </body>
 

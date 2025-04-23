@@ -28,14 +28,6 @@
         $result= $sqlselect -> get_result();
         while($row=$result->fetch_assoc()){
             
-        /*$myFile = fopen("Accessories.csv", "r");
-        $line = fgets($myFile);
-        while (!feof($myFile)) {
-            $line = fgets($myFile);
-            $arrayOfPieces = explode(";", $line);
-            print("<div>" . $line . "</div>");*/
-
- 
             if (count($row) == 12) {
 
                 $product_id=$row["ProductId"];

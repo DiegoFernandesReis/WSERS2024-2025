@@ -71,8 +71,8 @@
             if (count($pieces) >= 2) {
                 print ("<br>" . $pieces[0] . " " . $pieces[1] . " " . $pieces[2]);
             }
-        }
-        */
+        }*/
+        
     }
     ?>
 </body>

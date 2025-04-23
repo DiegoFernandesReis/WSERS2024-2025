@@ -32,7 +32,6 @@ Create table translations (
 );
 
 Create table Orders (
-
 Id int primary key auto_increment,
 userId int,
 username varchar(255),

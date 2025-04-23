@@ -31,7 +31,7 @@
     $dbName = "WSERS2PROJECT";
 
     $connection = mysqli_connect($host, $username, $psw, $dbName);
-    $sqlselect = $connection->prepare("select * from Products natural join Orders");
+    $sqlselect = $connection->prepare("select * from Products ");
     $sqlselect->execute();
     $result = $sqlselect->get_result();
     while ($row = $result->fetch_assoc()) {

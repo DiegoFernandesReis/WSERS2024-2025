@@ -97,15 +97,15 @@ if(isset($_POST['submitpromo'])){
     $result = $sqlselect -> get_result();
 
 
-    if($promo = $result -> fetch_assoc()){  
-        if($promo['Available'] > 0){
+    if($promocash = $result -> fetch_assoc()){  
+        if($promocash['Available'] > 0){
             $sqlupdate = $conn -> prepare('update Promotions set Available = Available -1 where Code = ?');
             $sqlupdate -> bind_param('s', $promo);
             $sqlupdate -> execute();
 
-            $sqlupdate = $conn -> prepare('update People set Money = Money + ? where Name = ?');
-            $sqlupdate -> bind_param('is', $promo['value'], $_SESSION["username"]);
-            $sqlupdate -> execute();
+            $sqlupdatecash = $conn -> prepare('update People set Money = Money + ? where Name = ?');
+            $sqlupdatecash -> bind_param('is', $promocash["value"], $_SESSION["username"]);
+            $sqlupdatecash -> execute();
 
             print("Code applied");
         }

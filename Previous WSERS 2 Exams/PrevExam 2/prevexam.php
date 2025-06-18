@@ -17,7 +17,7 @@
         return $result -> num_rows > 0;
     }
 
-    function login(){
+    function login(){ // To login / register if the user doesn't exist
         global $conn;
 
     $username= $_POST["username"];
@@ -38,7 +38,7 @@ if(isset($_POST["logout"])){ // logout : return to the previous page
     header("location:" . $_SERVER["PHP_SELF"]);
     exit();
 }
-if(!isset($_SESSION["username"])){
+if(!isset($_SESSION["username"])){ // To change the page when you log in
     ?>
     <!DOCTYPE html>
 <html lang="en">
@@ -71,8 +71,8 @@ else {
     <h2>Your amount of money:</h2>
 
     <?php
-    $stmt = $conn ->prepare("select Money from People where Name = ?");
-    $stmt ->bind_param("s", $_SESSION["username"]);
+    $stmt = $conn ->prepare("select Money from People where Name = ?"); // to check the users money
+    $stmt ->bind_param("s", $_SESSION["username"]); 
     $stmt -> execute();
     $result = $stmt ->get_result();
     if($row = $result->fetch_assoc()){
@@ -88,7 +88,7 @@ else {
 
     <?php
 } 
-if(isset($_POST['submitpromo'])){
+if(isset($_POST['submitpromo'])){ // To check if the item is still available
     $promo = $_POST['promo'];
     global $conn;
     $sqlselect = $conn -> prepare('Select Value, Available from Promotions where Code = ?');
@@ -97,7 +97,7 @@ if(isset($_POST['submitpromo'])){
     $result = $sqlselect -> get_result();
 
 
-    if($promocash = $result -> fetch_assoc()){  
+    if($promocash = $result -> fetch_assoc()){  // if the item is available you can change the promotions and people tables
         if($promocash['Available'] > 0){
             $sqlupdate = $conn -> prepare('update Promotions set Available = Available -1 where Code = ?');
             $sqlupdate -> bind_param('s', $promo);

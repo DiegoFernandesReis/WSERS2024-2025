@@ -8,14 +8,17 @@
 </head>
 <body>
     <?php
-
+    
 
     try{
         $link = mysqli_connect("localost","root","");
 
+        // go on here - it is safe, the database server is WORKING
+        print("No, errors the database is working properly");
     } catch (Exception $e) {
-        print("error db");
+        print("error database is not started");
     }
+    
       ?>
 </body>
 </html>

@@ -288,8 +288,6 @@
                         }
                     return $sum /$count;
                 }
-                   
-                
                 ?>
             </div>
         </div>

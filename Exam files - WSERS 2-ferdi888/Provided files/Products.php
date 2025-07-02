@@ -235,18 +235,20 @@
                     $sqlselect -> execute();
                     $result = $sqlselect -> get_result();
                     return $result -> num_rows >
+                 
+                 
+                 
 
 
-                if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
+                /*if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
                     echo "Items in your basket:<br>";
                     foreach ($_SESSION["cart"] as $productId) {
                         echo $productId . "<br>";
                     }
                 } else {
-                    echo "No items in your basket.";
-                }
+                    echo "No items in your basket.";*/
+                
     
-                function cart() {
                     $host = "localhost";
                     $username = "root";
                     $psw = "";
@@ -277,7 +279,7 @@
                         $sqlinsert->execute();
                     }
                     header("refresh:0");
-                }
+                
                 function total(){
                     $sum=0;
                     $count=0;
@@ -288,6 +290,8 @@
                         }
                     return $sum /$count;
                 }
+            }
+                
                 ?>
             </div>
         </div>

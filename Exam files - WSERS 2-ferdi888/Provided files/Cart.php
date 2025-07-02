@@ -70,6 +70,7 @@
                 cart();
                 $_SESSION["cart"] = [];
             }
+        }
 
         ?>
         <div class="Category">

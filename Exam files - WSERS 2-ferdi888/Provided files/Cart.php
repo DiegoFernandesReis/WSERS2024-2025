@@ -66,8 +66,8 @@
                 
 
             // to clear the basket !!!
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["clear"])) {
-                cart();
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["Clear session"])) {
+                productsCHECK();
                 $_SESSION["cart"] = [];
             }
         }
